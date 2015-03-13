@@ -1,0 +1,8 @@
+(ns-toggle-toolbar)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(let* ((path-raw (shell-command-to-string "$SHELL -lic 'echo $PATH'"))
+       (path-trimmed (replace-regexp-in-string "[ \t\n]*$" "" path-raw))
+       (path-separated (split-string path-trimmed path-separator)))
+  (setenv "PATH" path-trimmed)
+  (setq exec-path path-separated))

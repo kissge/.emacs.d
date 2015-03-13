@@ -1,0 +1,22 @@
+#+TITLE: init.el -- Emacs Configuration File
+#+AUTHOR: Y.K.
+#+OPTIONS: toc:nil
+
+# Hint: Type `C-c C-e b' to read this document in your web browser.
+
+ツッコミ，誤字脱字の指摘など歓迎します．
+
+* Usage
+  - 初回起動時に必要なファイルが自動で導入される．4分程度かかる．
+  - 一時的に試したい場合は次のようにしてEmacsを起動すれば手元の環境を汚さない．
+    #+BEGIN_EXAMPLE
+      $ emacs -q -l init.el
+      $ /Applications/Emacs.app/Contents/MacOS/Emacs -q -l init.el
+    #+END_EXAMPLE
+  - 永続的に使用する場合はこのディレクトリをホームディレクトリ直下に配置すれば良い．ただし =~/.emacs= あるいは =~/.emacs.el= が既に存在する場合はそちらが優先されるので注意せよ．
+
+* Requirements
+  - Emacs 24.3
+  - [[https://github.com/escapestudios/Symfony2-coding-standard][escapestudios/Symfony2-coding-standard]] (optional)
+  - XDebug (optional)
+  - Python (optional)
