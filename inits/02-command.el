@@ -98,7 +98,7 @@
     (message (concat "Copied \"" name "\" to clipboard."))))
 (global-set-key (kbd "C-x C-z") 'copy-filename)
 
-(global-set-key (kbd "C-c C-v") 'revert-buffer)
+(global-set-key (kbd "M-U") 'revert-buffer)
 
 (fset 'delete-eol-and-indent [down ?\M-m S-up S-end ? ])
 (global-set-key (kbd "<S-kp-delete>") 'delete-eol-and-indent)
