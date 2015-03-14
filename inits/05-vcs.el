@@ -1,6 +1,6 @@
 (el-get-bundle! fringe-helper)
 (el-get-bundle git-commit-mode in magit/git-modes)
-(el-get-bundle elpa:git-gutter+
+(el-get-bundle! elpa:git-gutter+
   (with-eval-after-load-feature 'git-gutter+
     (global-git-gutter+-mode)
     (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
