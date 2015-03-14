@@ -1,3 +1,7 @@
+(defun global-set-keys (command &rest keys)
+  (dolist (key keys)
+    (global-set-key key command)))
+
 (custom-set-variables '(cua-mode t nil (cua-base)))
 (global-set-key [f5] 'recompile)
 (global-set-key [f6] 'compile)
@@ -6,17 +10,12 @@
   (interactive)
   (other-window -1))
 (global-set-key [C-tab] 'other-window)
-(global-set-key (kbd "<C-S-tab>") 'other-window-prev)
-(global-set-key (kbd "<C-S-iso-lefttab>") 'other-window-prev)
+(global-set-keys 'other-window-prev (kbd "<C-S-tab>") (kbd "<C-S-iso-lefttab>"))
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-j" 'newline)
 
-(global-set-key (kbd "<M-left>") 'subword-backward)
-(global-set-key (kbd "<M-right>") 'subword-forward)
-(global-set-key (kbd "<A-left>") 'subword-backward)
-(global-set-key (kbd "<A-right>") 'subword-forward)
-(global-set-key (kbd "<XF86Back>") 'subword-backward)
-(global-set-key (kbd "<XF86Forward>") 'subword-forward)
+(global-set-keys 'subword-backward (kbd "<M-left>") (kbd "<A-left>") (kbd "<XF86Back>"))
+(global-set-keys 'subword-forward (kbd "<M-right>") (kbd "<A-right>") (kbd "<XF86Forward>"))
 (global-subword-mode 1)
 
 (defun delete-backward-word ()
@@ -31,10 +30,8 @@
     (subword-forward 1)
     (delete-region from (point))))
 
-(global-set-key (kbd "<C-backspace>") 'delete-backward-word)
-(global-set-key (kbd "<C-delete>") 'delete-forward-word)
-(global-set-key (kbd "<M-backspace>") 'delete-backward-word)
-(global-set-key (kbd "<M-delete>") 'delete-forward-word)
+(global-set-keys 'delete-backward-word (kbd "<C-backspace>") (kbd "<M-backspace>"))
+(global-set-keys 'delete-forward-word (kbd "<C-delete>") (kbd "<M-delete>") (kbd "<C-kp-delete>") (kbd "<M-kp-delete>"))
 
 (defun toggle-window-split ()
   (interactive)
