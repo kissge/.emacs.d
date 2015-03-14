@@ -21,3 +21,11 @@
                 (when (and (not (file-exists-p dir))
                            (y-or-n-p (format "Directory %s does not exist. Create it? " dir)))
                   (make-directory dir t))))))
+
+(defun display-compile-buffer-if-failed (buffer string)
+  (if (and (string-match "compilation" (buffer-name buffer))
+           (or ;; (with-current-buffer buffer (search-forward "warning" nil t))
+            (not (string-match "finished" string))))
+      (display-buffer buffer)))
+
+(add-hook 'compilation-finish-functions 'display-compile-buffer-if-failed)

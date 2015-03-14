@@ -3,9 +3,25 @@
     (global-set-key key command)))
 
 (custom-set-variables '(cua-mode t nil (cua-base)))
-(global-set-key [f5] 'recompile)
-(global-set-key [f6] 'compile)
+
+(defun compile-in-background (command &optional comint)
+  (interactive
+   (list
+    (let ((command (eval compile-command)))
+      (if (or compilation-read-command current-prefix-arg)
+          (compilation-read-command command)
+        command))
+    (consp current-prefix-arg)))
+  (save-window-excursion
+    (compile command comint)))
+(defun recompile-in-background ()
+  (interactive)
+  (save-window-excursion
+    (recompile)))
+(global-set-key [f5] 'recompile-in-background)
+(global-set-key [f6] 'compile-in-background)
 (global-set-key [f7] 'shell)
+
 (defun other-window-prev ()
   (interactive)
   (other-window -1))
