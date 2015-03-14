@@ -13,3 +13,5 @@
 (el-get-bundle elpa:git-gutter-fringe+
   (with-eval-after-load-feature 'git-gutter+
     (require 'git-gutter-fringe+)))
+
+(require 'git-gutter+)
