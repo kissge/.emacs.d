@@ -1,4 +1,4 @@
-(when hikarie
+(when env-hikarie
   ;; (add-hook 'html-mode-hook
   ;;           (lambda ()
   ;;             (setq tab-width 4)

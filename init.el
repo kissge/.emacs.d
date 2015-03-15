@@ -16,4 +16,6 @@
     (eval-print-last-sexp)))
 
 (el-get-bundle init-loader
-  (init-loader-load (locate-user-emacs-file "inits")))
+  (custom-set-variables '(init-loader-show-log-after-init 'error-only)
+                        '(init-loader-byte-compile t))
+  (init-loader-load))

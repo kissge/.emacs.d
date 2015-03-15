@@ -1,22 +1,6 @@
 (el-get-bundle tarao/with-eval-after-load-feature-el)
 
-(el-get-bundle! flymake ; don't load this after auto-complete
-  (defvar flymake-fringe-overlays nil)
-  (make-variable-buffer-local 'flymake-fringe-overlays)
-  (custom-set-variables '(flymake-run-in-place nil))
-  (defadvice flymake-make-overlay (after add-to-fringe first
-                                         (beg end tooltip-text face mouse-face)
-                                         activate compile)
-    (push (fringe-helper-insert-region
-           beg end
-           (fringe-lib-load (if (eq face 'flymake-errline)
-                                fringe-lib-exclamation-mark
-                              fringe-lib-question-mark))
-           'left-fringe 'font-lock-warning-face)
-          flymake-fringe-overlays))
-  (defadvice flymake-delete-own-overlays (after remove-from-fringe activate compile)
-    (mapc 'fringe-helper-remove flymake-fringe-overlays)
-    (setq flymake-fringe-overlays nil)))
+(el-get-bundle! flymake) ; don't load this after auto-complete
 (el-get-bundle auto-complete
   (custom-set-variables `(ac-comphist-file ,(expand-file-name (concat user-emacs-directory "/.achist")))))
 (el-get-bundle! session
@@ -52,7 +36,7 @@
   (global-set-key (kbd "M-s M-l") 're-builder)
   (global-set-key (kbd "M-s M-%") 'foreign-regexp/re-builder/query-replace-on-target-buffer))
 (let ((bluebird (expand-file-name "~/Dropbox/Settings/bluebird.el")))
-  (if (and (not hikarie) (file-exists-p bluebird))
+  (if (and (not env-hikarie) (file-exists-p bluebird))
       (el-get-bundle hayamiz/twittering-mode
         (autoload 'twittering-update-status-interactive "twittering-mode" nil t)
         (autoload 'twittering-replies-timeline "twittering-mode" nil t)

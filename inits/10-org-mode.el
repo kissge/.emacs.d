@@ -1,4 +1,5 @@
-(setq org-startup-folded nil)
+(custom-set-variables '(org-startup-folded nil))
+(autoload 'org-insert-heading "org")
 (defun org-my-return ()
   (interactive)
   (let ((current-line (buffer-substring-no-properties (point-at-bol) (point-at-eol))))

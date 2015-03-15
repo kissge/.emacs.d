@@ -1,6 +1,23 @@
-(el-get-bundle! fringe-helper)
+(el-get-bundle! fringe-helper
+  (defvar flymake-fringe-overlays nil)
+  (make-variable-buffer-local 'flymake-fringe-overlays)
+  (custom-set-variables '(flymake-run-in-place nil))
+  (defadvice flymake-make-overlay (after add-to-fringe first
+                                         (beg end tooltip-text face mouse-face)
+                                         activate compile)
+    (push (fringe-helper-insert-region
+           beg end
+           (fringe-lib-load (if (eq face 'flymake-errline)
+                                fringe-lib-exclamation-mark
+                              fringe-lib-question-mark))
+           'left-fringe 'font-lock-warning-face)
+          flymake-fringe-overlays))
+  (defadvice flymake-delete-own-overlays (after remove-from-fringe activate compile)
+    (mapc 'fringe-helper-remove flymake-fringe-overlays)
+    (setq flymake-fringe-overlays nil)))
 (el-get-bundle git-commit-mode in magit/git-modes)
 (el-get-bundle! elpa:git-gutter+
+  (require 'git-gutter+) ;; I couldn't figure out why this is necessary
   (with-eval-after-load-feature 'git-gutter+
     (global-git-gutter+-mode)
     (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
@@ -13,5 +30,3 @@
 (el-get-bundle elpa:git-gutter-fringe+
   (with-eval-after-load-feature 'git-gutter+
     (require 'git-gutter-fringe+)))
-
-(require 'git-gutter+)

@@ -1,4 +1,4 @@
-(setq hikarie (string-match-p "^vmac" system-name))
+(defconst env-hikarie (string-match-p "^vmac" system-name))
 
 (setq make-backup-files t)
 (setq backup-directory-alist
@@ -7,12 +7,11 @@
       `((".*" ,(locate-user-emacs-file ".backup") t)))
 (setq create-lockfiles nil)
 
-(setq tramp-auto-save-directory "/tmp")
-(set-default 'tramp-default-proxies-alist '())
-(add-to-list 'tramp-default-proxies-alist '(nil "\\`root\\'" "/ssh:%h:"))
-(add-to-list 'tramp-default-proxies-alist '("localhost" nil nil))
-(add-to-list 'tramp-default-proxies-alist '((regexp-quote (system-name)) nil nil))
-(custom-set-variables `(tramp-persistency-file-name ,(locate-user-emacs-file ".tramp")))
+(custom-set-variables `(tramp-persistency-file-name ,(locate-user-emacs-file ".tramp"))
+                      '(tramp-auto-save-directory "/tmp")
+                      '(tramp-default-proxies-alist '(((regexp-quote (system-name)) nil nil)
+                                                      ("localhost" nil nil)
+                                                      (nil "\\`root\\'" "/ssh:%h:"))))
 
 (setq completion-ignored-extensions
       (append completion-ignored-extensions
@@ -34,7 +33,6 @@
           (lambda ()
             (setq indent-tabs-mode nil)
             (setq comment-column 40)
-            (setq c-basic-offset 4)
             (c-set-offset 'substatement-open '0)
             (c-set-offset 'case-label '+)
             (c-set-offset 'arglist-intro '+)
@@ -42,3 +40,4 @@
             (setq show-trailing-whitespace t)))
 
 (setq-default indent-tabs-mode nil)
+(custom-set-variables '(c-basic-offset 4))

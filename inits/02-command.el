@@ -30,6 +30,7 @@
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-j" 'newline)
 
+(require 'subword)
 (global-set-keys 'subword-backward (kbd "<M-left>") (kbd "<A-left>") (kbd "<XF86Back>"))
 (global-set-keys 'subword-forward (kbd "<M-right>") (kbd "<A-right>") (kbd "<XF86Forward>"))
 (global-subword-mode 1)

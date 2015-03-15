@@ -1,7 +1,7 @@
 (setq frame-title-format "%b - Emacs")
 
 (show-paren-mode 1)
-(setq show-paren-style 'expression)
+(custom-set-variables '(show-paren-style 'expression))
 
 (custom-set-faces
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "Monaco"))))
@@ -14,8 +14,8 @@
 (set-fontset-font "fontset-default" 'katakana-jisx0201 '("Hiragino Kaku Gothic ProN" . "iso10646-1"))
 (set-face-background 'trailing-whitespace "purple4")
 (invert-face 'show-paren-match)
-(defface mixed-tab-and-space-face '((t (:background "purple4"))) nil)
-(defface tab-face '((t (:strike-through t :foreground "#202020"))) nil)
+(defface mixed-tab-and-space-face '((t (:background "purple4"))) nil :group 'original)
+(defface tab-face '((t (:strike-through t :foreground "#202020"))) nil :group 'original)
 (defadvice font-lock-mode (before my-font-lock-mode ())
   (unless (memq major-mode '(shell-mode diff-mode))
     (font-lock-add-keywords major-mode '(("^[ \t]* \t" 0 'mixed-tab-and-space-face append)))
