@@ -11,7 +11,9 @@
                       '(tramp-auto-save-directory "/.")
                       '(tramp-default-proxies-alist '(((regexp-quote (system-name)) nil nil)
                                                       ("localhost" nil nil)
-                                                      (nil "\\`root\\'" "/ssh:%h:"))))
+                                                      (nil "\\`root\\'" "/ssh:%h:")))
+                      '(auto-save-interval 100)
+                      '(auto-save-timeout 10))
 
 (setq completion-ignored-extensions
       (append completion-ignored-extensions
