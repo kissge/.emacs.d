@@ -25,3 +25,10 @@
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)))
 (el-get-bundle yaml-mode)
+
+(el-get-bundle web-mode
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode)))
+
+(custom-set-variables '(sgml-basic-offset 4))
