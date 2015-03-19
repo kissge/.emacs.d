@@ -2,13 +2,13 @@
 
 (setq make-backup-files t)
 (setq backup-directory-alist
-      `(("." . ,(locate-user-emacs-file ".backup")) . ,backup-directory-alist))
+      `(("." . ,(locate-user-emacs-file ".backup/")) . ,backup-directory-alist))
 (setq auto-save-file-name-transforms
-      `((".*" ,(locate-user-emacs-file ".backup") t)))
+      `((".*" ,(locate-user-emacs-file ".backup/") t)))
 (setq create-lockfiles nil)
 
 (custom-set-variables `(tramp-persistency-file-name ,(locate-user-emacs-file ".tramp"))
-                      '(tramp-auto-save-directory "/tmp")
+                      '(tramp-auto-save-directory "/.")
                       '(tramp-default-proxies-alist '(((regexp-quote (system-name)) nil nil)
                                                       ("localhost" nil nil)
                                                       (nil "\\`root\\'" "/ssh:%h:"))))
