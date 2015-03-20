@@ -24,7 +24,8 @@
                         '(geben-dbgp-default-port 19928)))
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)))
-(el-get-bundle yaml-mode)
+(el-get-bundle yaml-mode
+  (setq-default yaml-indent-offset 4))
 
 (el-get-bundle web-mode
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
