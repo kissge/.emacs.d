@@ -116,6 +116,7 @@
 (global-set-key (kbd "C-x C-z") 'copy-filename)
 
 (global-set-key (kbd "M-U") 'revert-buffer)
+(global-set-key (kbd "M-N") 'normal-mode)
 
 (fset 'delete-eol-and-indent [down ?\M-m S-up S-end ? ])
 (global-set-key (kbd "<S-kp-delete>") 'delete-eol-and-indent)
