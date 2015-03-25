@@ -8,7 +8,7 @@
   (setq history-delete-duplicates t)
   (custom-set-variables
    `(session-set-file-name-exclude-regexp
-     ,(concat session-set-file-name-exclude-regexp "\\|" "[/\\]\\.scratch" "\\|" "[/\\]geben[/\\]")))
+     ,(concat session-set-file-name-exclude-regexp "\\|" "[/\\]\\.scratch" "\\|" "[/\\]geben[/\\]" "\\|" "\\.loaddefs\\.el")))
   (session-initialize))
 (el-get-bundle undo-tree
   (global-undo-tree-mode 1)
