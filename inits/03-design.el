@@ -17,6 +17,7 @@
 (defface mixed-tab-and-space-face '((t (:background "purple4"))) nil :group 'original)
 (defface tab-face '((t (:strike-through t :foreground "#202020"))) nil :group 'original)
 (defadvice font-lock-mode (before my-font-lock-mode ())
+  (font-lock-add-keywords major-mode '(("\\(// \\)?[tT][oO][dD][oO]:.*[\r\n]?" 0 'highlight append)))
   (unless (memq major-mode '(shell-mode diff-mode))
     (font-lock-add-keywords major-mode '(("^[ \t]* \t" 0 'mixed-tab-and-space-face append)))
     (font-lock-add-keywords major-mode '(("\t+" 0 'tab-face append)))))
