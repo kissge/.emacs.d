@@ -13,7 +13,8 @@
                                                       ("localhost" nil nil)
                                                       (nil "\\`root\\'" "/ssh:%h:")))
                       '(auto-save-interval 100)
-                      '(auto-save-timeout 10))
+                      '(auto-save-timeout 10)
+                      `(url-configuration-directory ,(locate-user-emacs-file ".url/")))
 
 (setq completion-ignored-extensions
       (append completion-ignored-extensions
