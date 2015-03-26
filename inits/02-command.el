@@ -126,3 +126,13 @@
   (let ((b (if mark-active (min (point) (mark)) (point-min)))
         (e (if mark-active (max (point) (mark)) (point-max))))
     (shell-command-on-region b e "python -mjson.tool" (current-buffer) t)))
+
+(el-get-bundle string-inflection
+  (with-eval-after-load-feature 'string-inflection
+    (defun string-inflection-my-style-cycle ()
+      (interactive)
+      (insert (let ((str (string-inflection-get-current-word)))
+                (if (string-inflection-lower-camelcase-p str)
+                    (string-inflection-underscore-function str)
+                  (string-inflection-lower-camelcase-function str)))))
+    (global-set-key (kbd "C-x C-a") 'string-inflection-my-style-cycle)))
