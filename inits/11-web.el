@@ -30,6 +30,10 @@
 (el-get-bundle web-mode
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode)))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
+  (with-eval-after-load-feature 'web-mode
+    (setq web-mode-ac-sources-alist
+          '(("css" . (ac-source-css-property))
+            ("html" . (ac-source-words-in-buffer ac-source-abbrev))))))
 
 (custom-set-variables '(sgml-basic-offset 4))
