@@ -48,7 +48,7 @@
     (delete-region from (point))))
 
 (global-set-keys 'delete-backward-word (kbd "<C-backspace>") (kbd "<M-backspace>"))
-(global-set-keys 'delete-forward-word (kbd "<C-delete>") (kbd "<M-delete>") (kbd "<C-kp-delete>") (kbd "<M-kp-delete>"))
+(global-set-keys 'delete-forward-word (kbd "<C-delete>") (kbd "<C-kp-delete>") (kbd "<M-kp-delete>"))
 
 (defun toggle-window-split ()
   (interactive)
