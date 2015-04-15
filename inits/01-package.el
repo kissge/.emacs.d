@@ -21,7 +21,8 @@
   (global-ws-trim-mode t)
   (set-default 'ws-trim-level 0))
 (el-get-bundle zlc
-  (zlc-mode t))
+  (zlc-mode t)
+  (define-key minibuffer-local-map (kbd "/") nil))
 (el-get-bundle multiple-cursors
   (global-set-key (kbd "C-: C-]") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-: C-[") 'mc/mark-previous-like-this)
