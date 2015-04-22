@@ -81,6 +81,11 @@
                         (powerline-raw " ")
                         (powerline-raw "%6p" nil 'r)
                         )))
+        (if remote
+            (let ((hue (/ (string-to-number (substring (md5 remote) -4) 16) 65536.0)))
+              (set-face-background 'powerline-active1-tramp (apply 'color-rgb-to-hex (color-hsl-to-rgb hue .2 .2)))
+              (set-face-background 'powerline-active2-tramp (apply 'color-rgb-to-hex (color-hsl-to-rgb hue .2 .4)))
+              (powerline-reset)))
         (concat (powerline-render lhs)
                 (powerline-fill face2 (powerline-width rhs))
                 (powerline-render rhs)))))))
