@@ -1,4 +1,4 @@
-(setq frame-title-format "%b - Emacs")
+(setq frame-title-format (concat "%b - Emacs " emacs-version))
 
 (show-paren-mode 1)
 (custom-set-variables '(show-paren-style 'expression))
