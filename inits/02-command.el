@@ -133,5 +133,6 @@
       (insert (let ((str (string-inflection-get-current-word)))
                 (if (string-inflection-lower-camelcase-p str)
                     (string-inflection-underscore-function str)
-                  (string-inflection-lower-camelcase-function str))))))
+                  (string-inflection-lower-camelcase-function str)))))
+    (autoload 'string-inflection-my-style-cycle "string-inflection"))
   (global-set-key (kbd "C-x C-a") 'string-inflection-my-style-cycle))
