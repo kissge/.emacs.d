@@ -2,7 +2,8 @@
   (dolist (key keys)
     (global-set-key key command)))
 
-(custom-set-variables '(cua-mode t nil (cua-base)))
+(custom-set-variables '(cua-mode t nil (cua-base))
+                      '(select-active-regions nil)) ; for clipboard
 
 (defun compile-in-background (command &optional comint)
   (interactive
