@@ -8,3 +8,4 @@
   :type http
   :url "https://mozc.googlecode.com/svn/trunk/src/unix/emacs/mozc.el"
   (setq default-input-method "japanese-mozc"))
+(el-get-bundle! pos-tip)
