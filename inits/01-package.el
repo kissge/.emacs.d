@@ -26,6 +26,8 @@
 (el-get-bundle multiple-cursors
   (global-set-key (kbd "C-: C-]") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-: C-[") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-: C-}") 'mc/unmark-next-like-this)
+  (global-set-key (kbd "C-: C-{") 'mc/unmark-previous-like-this)
   (global-set-key (kbd "C-: C-:") 'mc/mark-all-dwim))
 (el-get-bundle k-talo/foreign-regexp.el
   (autoload 're-builder "foreign-regexp" nil t)
