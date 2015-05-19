@@ -8,7 +8,8 @@
 (setq create-lockfiles nil)
 
 (custom-set-variables `(tramp-persistency-file-name ,(locate-user-emacs-file ".tramp"))
-                      '(tramp-auto-save-directory "/.")
+                      '(tramp-backup-directory-alist backup-directory-alist)
+                      `(tramp-auto-save-directory ,(locate-user-emacs-file ".backup/"))
                       '(tramp-default-proxies-alist '(((regexp-quote (system-name)) nil nil)
                                                       ("localhost" nil nil)
                                                       (nil "\\`root\\'" "/ssh:%h:")))
