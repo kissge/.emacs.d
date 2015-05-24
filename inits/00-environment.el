@@ -15,6 +15,7 @@
                                                       (nil "\\`root\\'" "/ssh:%h:")))
                       '(auto-save-interval 100)
                       '(auto-save-timeout 10)
+                      `(auto-save-list-file-prefix ,(concat user-emacs-directory ".auto-save-list/.saves-"))
                       `(url-configuration-directory ,(locate-user-emacs-file ".url/")))
 
 (setq completion-ignored-extensions
