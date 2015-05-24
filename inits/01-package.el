@@ -10,7 +10,7 @@
    `(session-set-file-name-exclude-regexp
      ,(concat session-set-file-name-exclude-regexp "\\|" "[/\\]\\.scratch" "\\|" "[/\\]geben[/\\]" "\\|" "\\.loaddefs\\.el")))
   (session-initialize)
-  (run-at-time t 180 'session-save-session))
+  (add-hook 'find-file-hook 'session-save-session))
 (el-get-bundle undo-tree
   (global-undo-tree-mode 1)
   (global-set-key (kbd "C-z") 'undo-tree-undo)
