@@ -25,3 +25,4 @@
             (local-set-key (kbd "<C-right>") 'org-metaright)
             (local-set-key (kbd "RET") 'org-my-return)
             (local-set-key (kbd "C-c d") 'org-my-insert-date-heading)))
+(font-lock-add-keywords 'org-mode '(("^[ \t]*. \\[X\\].*[\r\n]?" 0 'shadow append)))
