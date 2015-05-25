@@ -6,6 +6,10 @@
     (if (string-match "^[ \t]*-[ \t]*[^ \t]+" current-line)
         (org-insert-heading)
       (newline))))
+(defun org-my-insert-date-heading ()
+  (interactive)
+  (beginning-of-line)
+  (insert (format-time-string "* %Y-%m-%d ")))
 (add-hook 'org-mode-hook 
           (lambda ()
             (local-unset-key (kbd "<C-tab>"))
@@ -19,4 +23,5 @@
             (local-unset-key (kbd "<M-S-right>"))
             (local-set-key (kbd "<C-left>") 'org-metaleft)
             (local-set-key (kbd "<C-right>") 'org-metaright)
-            (local-set-key (kbd "RET") 'org-my-return)))
+            (local-set-key (kbd "RET") 'org-my-return)
+            (local-set-key (kbd "C-c d") 'org-my-insert-date-heading)))
