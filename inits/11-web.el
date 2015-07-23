@@ -19,7 +19,7 @@
                (php-enable-symfony2-coding-style)
                (make-local-variable 'ac-stop-words)
                (add-to-list 'ac-stop-words "php"))))
-(el-get-bundle geben
+(el-get-bundle geben in kissge/geben-on-emacs
   (custom-set-variables '(dbgp-default-port 19928)
                         '(geben-dbgp-default-port 19928)))
 (el-get-bundle js2-mode
