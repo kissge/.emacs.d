@@ -21,17 +21,13 @@
 (el-get-bundle git-commit
   :type http
   :url "https://raw.githubusercontent.com/magit/magit/master/lisp/git-commit.el")
-(el-get-bundle! elpa:git-gutter+
-  (require 'git-gutter+) ;; I couldn't figure out why this is necessary
-  (with-eval-after-load-feature 'git-gutter+
-    (global-git-gutter+-mode)
-    (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
-    (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
-    (define-key git-gutter+-mode-map (kbd "C-x ?") 'git-gutter+-show-hunk)
-    (define-key git-gutter+-mode-map (kbd "C-x r") 'git-gutter+-revert-hunks)
-    (define-key git-gutter+-mode-map (kbd "C-x t") 'git-gutter+-stage-hunks)
-    (define-key git-gutter+-mode-map (kbd "C-x c") 'git-gutter+-commit)
-    (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-commit)))
-(el-get-bundle elpa:git-gutter-fringe+
-  (with-eval-after-load-feature 'git-gutter+
-    (require 'git-gutter-fringe+)))
+(el-get-bundle! git-gutter+ in nonsequitur/git-gutter-plus
+  (global-git-gutter+-mode)
+  (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
+  (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
+  (define-key git-gutter+-mode-map (kbd "C-x ?") 'git-gutter+-show-hunk)
+  (define-key git-gutter+-mode-map (kbd "C-x r") 'git-gutter+-revert-hunks)
+  (define-key git-gutter+-mode-map (kbd "C-x t") 'git-gutter+-stage-hunks)
+  (define-key git-gutter+-mode-map (kbd "C-x c") 'git-gutter+-commit)
+  (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-commit))
+(el-get-bundle! git-gutter-fringe+ in nonsequitur/git-gutter-fringe-plus)
