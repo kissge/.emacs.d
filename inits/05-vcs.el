@@ -15,7 +15,12 @@
   (defadvice flymake-delete-own-overlays (after remove-from-fringe activate compile)
     (mapc 'fringe-helper-remove flymake-fringe-overlays)
     (setq flymake-fringe-overlays nil)))
-(el-get-bundle git-commit-mode in magit/git-modes)
+(el-get-bundle with-editor
+  :type http
+  :url "https://raw.githubusercontent.com/magit/magit/master/lisp/with-editor.el")
+(el-get-bundle git-commit
+  :type http
+  :url "https://raw.githubusercontent.com/magit/magit/master/lisp/git-commit.el")
 (el-get-bundle! elpa:git-gutter+
   (require 'git-gutter+) ;; I couldn't figure out why this is necessary
   (with-eval-after-load-feature 'git-gutter+

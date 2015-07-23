@@ -3,6 +3,7 @@
 (el-get-bundle! flymake) ; don't load this after auto-complete
 (el-get-bundle auto-complete
   (custom-set-variables `(ac-comphist-file ,(expand-file-name (concat user-emacs-directory "/.achist")))))
+(el-get-bundle dash)
 (el-get-bundle undo-tree
   (global-undo-tree-mode 1)
   (global-set-key (kbd "C-z") 'undo-tree-undo)
