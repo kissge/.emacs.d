@@ -125,7 +125,11 @@
   (interactive)
   (let ((b (if mark-active (min (point) (mark)) (point-min)))
         (e (if mark-active (max (point) (mark)) (point-max))))
-    (shell-command-on-region b e "python -mjson.tool" (current-buffer) t)))
+    (shell-command-on-region b e
+                             (concat "python -c 'import sys,json,codecs;"
+                                     "print >> codecs.getwriter(\"utf8\")(sys.stdout), "
+                                     "json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False)'")
+                             (current-buffer) t)))
 
 (el-get-bundle string-inflection
   (with-eval-after-load-feature 'string-inflection
