@@ -30,6 +30,7 @@
 
 (el-get-bundle web-mode
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
   (with-eval-after-load-feature 'web-mode
