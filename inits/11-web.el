@@ -23,7 +23,8 @@
   (custom-set-variables '(dbgp-default-port 19928)
                         '(geben-dbgp-default-port 19928)))
 (el-get-bundle js2-mode
-  (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)))
+  (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+  (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))))
 (el-get-bundle yaml-mode
   (setq-default yaml-indent-offset 4)
   (add-hook 'yaml-mode-hook (lambda () (setq require-final-newline t))))
