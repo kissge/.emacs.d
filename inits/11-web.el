@@ -17,6 +17,7 @@
                    (let ((mode-and-masks (flymake-get-file-name-mode-and-masks "example.php")))
                      (setcar mode-and-masks 'flymake-phpcs-init)))
                (php-enable-symfony2-coding-style)
+               (setq show-trailing-whitespace t)
                (make-local-variable 'ac-stop-words)
                (add-to-list 'ac-stop-words "php"))))
 (el-get-bundle geben in kissge/geben-on-emacs
