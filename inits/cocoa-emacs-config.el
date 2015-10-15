@@ -5,3 +5,8 @@
        (path-separated (split-string path-trimmed path-separator)))
   (setenv "PATH" path-trimmed)
   (setq exec-path path-separated))
+
+(global-set-key (kbd "M-\"")
+                (defun open-iterm-here ()
+                  (interactive)
+                  (shell-command "open -a iTerm .")))
