@@ -141,3 +141,8 @@
                   (string-inflection-lower-camelcase-function str))))))
   (autoload 'string-inflection-my-style-cycle "string-inflection")
   (global-set-key (kbd "C-x C-a") 'string-inflection-my-style-cycle))
+
+(global-set-key (kbd "C-c C-d")
+                (defun insert-iso8601-date ()
+                  (interactive)
+                  (insert (format-time-string "%Y-%m-%d"))))
