@@ -27,15 +27,12 @@
   (global-set-key (kbd "C-: C-}") 'mc/unmark-next-like-this)
   (global-set-key (kbd "C-: C-{") 'mc/unmark-previous-like-this)
   (global-set-key (kbd "C-: C-:") 'mc/mark-all-dwim))
-(el-get-bundle k-talo/foreign-regexp.el
-  (autoload 're-builder "foreign-regexp" nil t)
-  (autoload 'foreign-regexp/re-builder/query-replace-on-target-buffer "foreign-regexp" nil t)
-  (eval-after-load "foreign-regexp"
-    '(custom-set-variables
-      '(foreign-regexp/regexp-type 'perl)
-      '(reb-re-syntax 'foreign-regexp)))
-  (global-set-key (kbd "M-s M-l") 're-builder)
-  (global-set-key (kbd "M-s M-%") 'foreign-regexp/re-builder/query-replace-on-target-buffer))
+(el-get-bundle pcre2el)
+(el-get-bundle visual-regexp)
+(el-get-bundle visual-regexp-steroids
+  (with-eval-after-load-feature 'visual-regexp
+    (require 'visual-regexp-steroids)
+    (custom-set-variables '(vr/engine 'pcre2el))))
 (let ((bluebird (expand-file-name "~/Dropbox/Settings/bluebird.el")))
   (if (and (not env-hikarie) (file-exists-p bluebird))
       (el-get-bundle hayamiz/twittering-mode

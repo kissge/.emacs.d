@@ -2,7 +2,7 @@
 #+AUTHOR: Y.K.
 #+OPTIONS: toc:nil
 
-# Hint: Type `C-c C-e b' to read this document in your web browser.
+# Hint: Type `C-c C-e h o' to read this document in your web browser.
 
 ツッコミ，誤字脱字の指摘など歓迎します．
 
@@ -16,7 +16,7 @@
   - 永続的に使用する場合はこのディレクトリをホームディレクトリ直下に配置すれば良い．ただし =~/.emacs= あるいは =~/.emacs.el= が既に存在する場合はそちらが優先されるので注意せよ．
 
 * Requirements
-  - Emacs 24.3
+  - Emacs 24.4
   - [[https://github.com/escapestudios/Symfony2-coding-standard][escapestudios/Symfony2-coding-standard]] (optional)
   - XDebug (optional)
   - Python (optional)
