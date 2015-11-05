@@ -31,12 +31,12 @@
 (el-get-bundle visual-regexp)
 (el-get-bundle visual-regexp-steroids
   (with-eval-after-load-feature 'visual-regexp
-    (require 'visual-regexp-steroids)
-    (global-set-key (kbd "M-%") 'vr/query-replace)
-    (global-set-key (kbd "C-c m") 'vr/mc-mark)
-    (global-set-key (kbd "C-M-r") 'vr/isearch-backward)
-    (global-set-key (kbd "C-M-s") 'vr/isearch-forward)
-    (custom-set-variables '(vr/engine 'pcre2el))))
+    (require 'visual-regexp-steroids))
+  (global-set-key (kbd "M-%") 'vr/query-replace)
+  (global-set-key (kbd "C-c m") 'vr/mc-mark)
+  (global-set-key (kbd "C-M-r") 'vr/isearch-backward)
+  (global-set-key (kbd "C-M-s") 'vr/isearch-forward)
+  (custom-set-variables '(vr/engine 'pcre2el)))
 (let ((bluebird (expand-file-name "~/Dropbox/Settings/bluebird.el")))
   (if (and (not env-hikarie) (file-exists-p bluebird))
       (el-get-bundle hayamiz/twittering-mode
