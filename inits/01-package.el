@@ -27,7 +27,6 @@
   (global-set-key (kbd "C-: C-}") 'mc/unmark-next-like-this)
   (global-set-key (kbd "C-: C-{") 'mc/unmark-previous-like-this)
   (global-set-key (kbd "C-: C-:") 'mc/mark-all-dwim))
-(el-get-bundle pcre2el)
 (el-get-bundle visual-regexp)
 (el-get-bundle visual-regexp-steroids
   (with-eval-after-load-feature 'visual-regexp
@@ -35,8 +34,7 @@
   (global-set-key (kbd "M-%") 'vr/query-replace)
   (global-set-key (kbd "C-c m") 'vr/mc-mark)
   (global-set-key (kbd "C-M-r") 'vr/isearch-backward)
-  (global-set-key (kbd "C-M-s") 'vr/isearch-forward)
-  (custom-set-variables '(vr/engine 'pcre2el)))
+  (global-set-key (kbd "C-M-s") 'vr/isearch-forward))
 (let ((bluebird (expand-file-name "~/Dropbox/Settings/bluebird.el")))
   (if (and (not env-hikarie) (file-exists-p bluebird))
       (el-get-bundle hayamiz/twittering-mode
