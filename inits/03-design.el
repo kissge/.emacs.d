@@ -26,6 +26,9 @@
 (add-hook 'find-file-hooks '(lambda () (if font-lock-mode nil (font-lock-mode t))))
 
 (el-get-bundle! milkypostman/powerline
+  ;; bad hack :( ... see https://github.com/milkypostman/powerline/issues/54
+  (custom-set-variables '(ns-use-srgb-colorspace nil))
+
   (defface powerline-active1-tramp '((t (:inherit mode-line))) "" :group 'powerline)
   (defface powerline-active2-tramp '((t (:inherit mode-line))) "" :group 'powerline)
   (set-face-attribute 'mode-line nil
