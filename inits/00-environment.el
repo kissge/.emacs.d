@@ -10,6 +10,7 @@
 (custom-set-variables `(tramp-persistency-file-name ,(locate-user-emacs-file ".tramp"))
                       '(tramp-backup-directory-alist backup-directory-alist)
                       `(tramp-auto-save-directory ,(locate-user-emacs-file ".backup/"))
+                      '(tramp-use-ssh-controlmaster-options nil)
                       '(tramp-default-proxies-alist '(((regexp-quote (system-name)) nil nil)
                                                       ("localhost" nil nil)
                                                       (nil "\\`root\\'" "/ssh:%h:")))
