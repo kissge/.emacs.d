@@ -28,3 +28,9 @@
 (add-hook 'org-beamer-mode-hook
           (lambda () (local-set-key (kbd "<f5>") 'org-beamer-export-to-pdf)))
 (font-lock-add-keywords 'org-mode '(("^[ \t]*. \\[X\\].*[\r\n]?" 0 'shadow append)))
+
+(advice-add 'org-beamer-bold :override
+            #'(lambda (bold contents info)
+                (format "\\textbf%s{%s}"
+                        (or (org-beamer--element-has-overlay-p bold) "")
+                        contents)))
