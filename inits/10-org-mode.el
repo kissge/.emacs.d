@@ -1,5 +1,5 @@
 (custom-set-variables '(org-startup-folded nil))
-(autoload 'org-insert-heading "org")
+(declare-function org-insert-heading "org" (&optional arg invisible-ok))
 (defun org-my-return ()
   (interactive)
   (let ((current-line (buffer-substring-no-properties (point-at-bol) (point-at-eol))))
@@ -29,6 +29,7 @@
           (lambda () (local-set-key (kbd "<f5>") 'org-beamer-export-to-pdf)))
 (font-lock-add-keywords 'org-mode '(("^[ \t]*. \\[X\\].*[\r\n]?" 0 'shadow append)))
 
+(declare-function org-beamer--element-has-overlay-p "ox-beamer" (element))
 (advice-add 'org-beamer-bold :override
             #'(lambda (bold contents info)
                 (format "\\textbf%s{%s}"
