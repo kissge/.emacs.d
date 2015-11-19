@@ -47,3 +47,5 @@
 
 (setq-default indent-tabs-mode nil)
 (custom-set-variables '(c-basic-offset 4))
+
+(custom-set-variables '(el-get-git-shallow-clone t))
