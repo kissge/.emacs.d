@@ -12,7 +12,5 @@
                   (interactive)
                   (shell-command "open -a iTerm .")))
 
-(custom-set-faces
- '(default ((t (:height 98 :family "MonacoB")))))
 (set-fontset-font "fontset-default" 'japanese-jisx0208 '("Hiragino Kaku Gothic ProN" . "iso10646-1"))
 (set-fontset-font "fontset-default" 'katakana-jisx0201 '("Hiragino Kaku Gothic ProN" . "iso10646-1"))

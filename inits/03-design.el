@@ -4,7 +4,7 @@
 (custom-set-variables '(show-paren-style 'expression))
 
 (custom-set-faces
- '(default ((t (:background "black" :foreground "white"))))
+ '(default ((t (:background "black" :foreground "white" :height 98 :family "MonacoB"))))
  '(completions-common-part ((t (:inherit default :foreground "red"))))
  '(diredp-compressed-file-suffix ((t (:foreground "#7b68ee"))))
  '(diredp-ignored-file-name ((t (:foreground "#aaaaaa"))))
