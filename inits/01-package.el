@@ -7,6 +7,22 @@
               (local-set-key (kbd "M-n") 'flymake-goto-next-error))))
 (el-get-bundle auto-complete
   (custom-set-variables `(ac-comphist-file ,(expand-file-name (concat user-emacs-directory "/.achist")))))
+(el-get-bundle! session
+  (custom-set-variables '(history-length 10000)
+                        '(history-delete-duplicates t))
+  (with-eval-after-load-feature 'session
+    (setq session-set-file-name-exclude-regexp
+          (concat session-set-file-name-exclude-regexp "\\|" "[/\\]\\.scratch" "\\|" "[/\\]geben[/\\]" "\\|" "\\.loaddefs\\.el")))
+    (defadvice write-region (before force-quiet)
+      (ad-set-arg 4 0))
+    (add-hook 'after-init-hook
+              (lambda ()
+                (session-initialize)                
+                (add-hook 'find-file-hook
+                          (lambda ()
+                            (ad-activate 'write-region)
+                            (session-save-session)
+                            (ad-deactivate 'write-region))))))
 (el-get-bundle dash)
 (el-get-bundle undo-tree
   (global-undo-tree-mode 1)
