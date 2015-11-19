@@ -31,8 +31,6 @@
         (setq ad-return-value
               (completion-pcm--filename-try-filter res)))))
 
-(prefer-coding-system 'euc-jp)
-(prefer-coding-system 'utf-8)
 (prefer-coding-system 'utf-8-unix)
 
 (add-hook 'c-mode-common-hook
