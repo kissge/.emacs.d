@@ -20,9 +20,6 @@
                (setq show-trailing-whitespace t)
                (make-local-variable 'ac-stop-words)
                (add-to-list 'ac-stop-words "php"))))
-(el-get-bundle geben in kissge/geben-on-emacs
-  (custom-set-variables '(dbgp-default-port 19928)
-                        '(geben-dbgp-default-port 19928)))
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
   (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))))
