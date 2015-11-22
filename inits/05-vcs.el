@@ -30,4 +30,5 @@
   (define-key git-gutter+-mode-map (kbd "C-x t") 'git-gutter+-stage-hunks)
   (define-key git-gutter+-mode-map (kbd "C-x c") 'git-gutter+-commit)
   (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-commit))
-(el-get-bundle! git-gutter-fringe+ in nonsequitur/git-gutter-fringe-plus)
+(if window-system
+    (el-get-bundle! git-gutter-fringe+ in nonsequitur/git-gutter-fringe-plus))
