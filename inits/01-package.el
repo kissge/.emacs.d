@@ -17,7 +17,7 @@
       (ad-set-arg 4 0))
     (add-hook 'after-init-hook
               (lambda ()
-                (session-initialize)                
+                (session-initialize)
                 (add-hook 'find-file-hook
                           (lambda ()
                             (ad-activate 'write-region)
