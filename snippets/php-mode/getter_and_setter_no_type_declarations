@@ -1,0 +1,28 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: getter and setter (w/o type declrations)
+# key: gas2
+# binding: direct-keybinding
+# --
+/**
+ * Set $1
+ *
+ * @param ${2:$$(yas-choose-value '("array" "callable" "bool" "float" "int" "string"))} \$$1
+ *
+ * @return ${3:$$(yas-choose-value '("self" "array" "callable" "bool" "float" "int" "string"))}
+ */
+public function set${1:$(string-inflection-camelcase-function yas-text)}(\$$1)
+{
+    $this->$1 = \$$1;
+
+    return $this;
+}
+
+/**
+ * Get $1
+ *
+ * @return $2
+ */
+public function get${1:$(string-inflection-camelcase-function yas-text)}()
+{
+    return $this->$1;
+}

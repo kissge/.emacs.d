@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: with codecs.open(...)
+# key: wco
+# binding: direct-keybinding
+# --
+with codecs.open(${1:''}${2:$$(yas-choose-value '(", 'w'" ", 'r'" ""))}) as fp:
+     `yas-selected-text`$0

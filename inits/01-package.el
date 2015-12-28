@@ -62,6 +62,9 @@
                         (kbd "<M-left>") (kbd "<M-right>")
                         (kbd "<M-S-left>") (kbd "<M-S-right>")))
                 (local-unset-key key)))))
+(el-get-bundle yasnippet
+  (yas-global-mode 1)
+  (autoload 'string-inflection-camelcase-function "string-inflection"))
 (let ((bluebird (expand-file-name "~/Dropbox/Settings/bluebird.el")))
   (if (and (not env-hikarie) (file-exists-p bluebird))
       (el-get-bundle hayamiz/twittering-mode

@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: figure
+# key: fig
+# binding: direct-keybinding
+# --
+#+LaTeX: \center
+#+ATTR_LATEX: :width ${2:1\textwidth}
+[[./$1.pdf]]$0

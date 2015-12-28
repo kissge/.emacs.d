@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: DocBlock
+# key: /docb
+# binding: direct-keybinding
+# --
+/**
+ * $1
+ */$0
