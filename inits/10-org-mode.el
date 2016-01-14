@@ -21,8 +21,8 @@
             (local-unset-key (kbd "<M-right>"))
             (local-unset-key (kbd "<M-S-left>"))
             (local-unset-key (kbd "<M-S-right>"))
-            (local-set-key (kbd "<C-left>") 'org-metaleft)
-            (local-set-key (kbd "<C-right>") 'org-metaright)
+            (local-set-key (kbd "<C-left>") 'org-shiftmetaleft)
+            (local-set-key (kbd "<C-right>") 'org-shiftmetaright)
             (local-set-key (kbd "RET") 'org-my-return)
             (local-set-key (kbd "C-c d") 'org-my-insert-date-heading)))
 (add-hook 'org-beamer-mode-hook
