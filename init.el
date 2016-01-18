@@ -15,7 +15,8 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-(el-get-bundle init-loader
+(el-get-bundle kissge/init-loader
   (custom-set-variables '(init-loader-show-log-after-init 'error-only)
-                        '(init-loader-byte-compile t))
+                        '(init-loader-byte-compile t)
+                        '(init-loader-order 'platform-specific-first))
   (init-loader-load))
