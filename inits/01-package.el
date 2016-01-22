@@ -54,6 +54,14 @@
 (el-get-bundle jedi
   (add-hook 'python-mode-hook 'jedi:setup)
   (custom-set-variables '(jedi:complete-on-dot t)))
+(el-get-bundle markdown-mode
+  (add-hook 'markdown-mode-hook
+            (defun markdown-mode-my-hook ()
+              (dolist (key
+                       (list
+                        (kbd "<M-left>") (kbd "<M-right>")
+                        (kbd "<M-S-left>") (kbd "<M-S-right>")))
+                (local-unset-key key)))))
 (let ((bluebird (expand-file-name "~/Dropbox/Settings/bluebird.el")))
   (if (and (not env-hikarie) (file-exists-p bluebird))
       (el-get-bundle hayamiz/twittering-mode
