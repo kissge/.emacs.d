@@ -21,6 +21,7 @@
             (local-unset-key (kbd "<M-right>"))
             (local-unset-key (kbd "<M-S-left>"))
             (local-unset-key (kbd "<M-S-right>"))
+            (local-unset-key (kbd "C-c C-d"))
             (local-set-key (kbd "<C-left>") 'org-shiftmetaleft)
             (local-set-key (kbd "<C-right>") 'org-shiftmetaright)
             (local-set-key (kbd "RET") 'org-my-return)
