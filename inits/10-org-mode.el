@@ -27,7 +27,13 @@
             (local-set-key (kbd "RET") 'org-my-return)
             (local-set-key (kbd "C-c d") 'org-my-insert-date-heading)))
 (add-hook 'org-beamer-mode-hook
-          (lambda () (local-set-key (kbd "<f5>") 'org-beamer-export-to-pdf)))
+          (defun org-beamer-mode-my-hook ()
+            (local-set-key (kbd "<f5>") 'org-beamer-export-to-pdf)
+            (local-set-key (kbd "<f6>")
+                           (defun org-beamer-open-pdf-in-window ()
+                             (interactive)
+                             (find-file-other-window
+                              (concat (file-name-sans-extension buffer-file-name) ".pdf"))))))
 (font-lock-add-keywords 'org-mode '(("^[ \t]*. \\[X\\].*[\r\n]?" 0 'shadow append)))
 
 (declare-function org-beamer--element-has-overlay-p "ox-beamer" (element))
