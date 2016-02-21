@@ -126,9 +126,15 @@
   (let ((b (if mark-active (min (point) (mark)) (point-min)))
         (e (if mark-active (max (point) (mark)) (point-max))))
     (shell-command-on-region b e
-                             (concat "python -c 'import sys,json,codecs;"
-                                     "print >> codecs.getwriter(\"utf8\")(sys.stdout), "
-                                     "json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False)'")
+                             (concat "python -c '"
+                                     "import sys, json, codecs, collections;"
+                                     "print >> codecs.getwriter(\"utf8\")(sys.stdout),"
+                                     "json.dumps(json.loads(sys.stdin.read(),"
+                                     "                      object_pairs_hook=collections.OrderedDict),"
+                                     "           indent=4,"
+                                     "           ensure_ascii=False,"
+                                     "           separators=(\",\",\": \"))"
+                                     "'")
                              (current-buffer) t)))
 
 (el-get-bundle string-inflection
