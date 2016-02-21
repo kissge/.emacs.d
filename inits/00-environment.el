@@ -47,3 +47,5 @@
 (custom-set-variables '(c-basic-offset 4))
 
 (custom-set-variables '(el-get-git-shallow-clone t))
+
+(setq auto-mode-alist (cons '("\\.m$" . octave-mode) auto-mode-alist))
