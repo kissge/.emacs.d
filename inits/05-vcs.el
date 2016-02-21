@@ -17,7 +17,7 @@
     (setq flymake-fringe-overlays nil)))
 (el-get-bundle with-editor
   :type http
-  :url "https://raw.githubusercontent.com/magit/magit/master/lisp/with-editor.el")
+  :url "https://raw.githubusercontent.com/magit/with-editor/master/with-editor.el")
 (el-get-bundle git-commit
   :type http
   :url "https://raw.githubusercontent.com/magit/magit/master/lisp/git-commit.el")
