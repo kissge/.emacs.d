@@ -29,3 +29,12 @@
       (display-buffer buffer)))
 
 (add-hook 'compilation-finish-functions 'display-compile-buffer-if-failed)
+
+;; bad hack: force backup file to be saved in the local directory in tramp-mode
+;; This behavior possibly leads to a problem when using `su' or `sudo'
+(autoload 'tramp-run-real-handler "tramp" "" nil '(operation args))
+(with-eval-after-load-feature 'tramp
+  (defun tramp-handle-find-backup-file-name (filename)
+    (with-parsed-tramp-file-name filename nil
+      (let ((backup-directory-alist backup-directory-alist))
+        (tramp-run-real-handler 'find-backup-file-name (list filename))))))
