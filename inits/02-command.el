@@ -152,3 +152,7 @@
                 (defun insert-iso8601-date ()
                   (interactive)
                   (insert (format-time-string "%Y-%m-%d"))))
+
+(global-set-key (kbd "C-M-<tab>") 'hippie-expand)
+(custom-set-variables '(hippie-expand-try-functions-list
+                        '(try-complete-file-name-partially try-complete-file-name)))
