@@ -15,9 +15,7 @@
   (defadvice flymake-delete-own-overlays (after remove-from-fringe activate compile)
     (mapc 'fringe-helper-remove flymake-fringe-overlays)
     (setq flymake-fringe-overlays nil)))
-(el-get-bundle with-editor
-  :type http
-  :url "https://raw.githubusercontent.com/magit/with-editor/master/with-editor.el")
+(el-get-bundle with-editor)
 (el-get-bundle git-commit
   :type http
   :url "https://raw.githubusercontent.com/magit/magit/master/lisp/git-commit.el")
