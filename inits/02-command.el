@@ -156,3 +156,14 @@
 (global-set-key (kbd "C-M-<tab>") 'hippie-expand)
 (custom-set-variables '(hippie-expand-try-functions-list
                         '(try-complete-file-name-partially try-complete-file-name)))
+
+(define-key minibuffer-local-map (kbd "M-<up>")
+  (defun delete-backward-until-slash ()
+    (interactive)
+    (let ((from (point)))
+      (if (eq (preceding-char) ?/)
+          (backward-char))
+      (unless (search-backward "/" nil t)
+        (move-beginning-of-line nil))
+      (delete-region from (point))
+      (insert-char ?/))))
