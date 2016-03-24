@@ -30,6 +30,7 @@
              (cdr res)) ; length > 1, don't ignore sole match
         (setq ad-return-value
               (completion-pcm--filename-try-filter res)))))
+(custom-set-variables '(read-buffer-completion-ignore-case t))
 
 (prefer-coding-system 'utf-8-unix)
 
