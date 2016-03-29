@@ -91,3 +91,6 @@
         (concat (powerline-render lhs)
                 (powerline-fill face2 (powerline-width rhs))
                 (powerline-render rhs)))))))
+
+(el-get-bundle! mode-icons
+  (mode-icons-mode))
