@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: import plac
+# key: plac
+# --
+if __name__ == '__main__':
+    import plac
+    plac.call(main)

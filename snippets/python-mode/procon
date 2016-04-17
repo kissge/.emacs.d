@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: [int(x) for x in input().split()]
+# key: iis
+# --
+[int(x) for x in input().split()]
