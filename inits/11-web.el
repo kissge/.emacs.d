@@ -1,6 +1,5 @@
 (el-get-bundle php-mode)
 (el-get-bundle! flymake-cursor)
-(el-get-bundle php-eldoc)
 (el-get-bundle arnested/php-extras)
 (el-get-bundle! flymake-phpcs
   :type github :pkgname "illusori/emacs-flymake-phpcs"
