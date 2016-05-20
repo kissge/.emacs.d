@@ -51,9 +51,6 @@
   (global-set-key (kbd "C-c m") 'vr/mc-mark)
   (global-set-key (kbd "C-M-r") 'vr/isearch-backward)
   (global-set-key (kbd "C-M-s") 'vr/isearch-forward))
-(el-get-bundle jedi
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (custom-set-variables '(jedi:complete-on-dot t)))
 (el-get-bundle markdown-mode
   (add-hook 'markdown-mode-hook
             (defun markdown-mode-my-hook ()

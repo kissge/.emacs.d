@@ -21,7 +21,7 @@
 
 (setq completion-ignored-extensions
       (append completion-ignored-extensions
-              '(".exe" ".com" ".o" ".out" "./" "../" ".docx" ".xlsx" "#" ".DS_Store" ".zip" ".tar.gz" ".tgz" "Icon\n" "TAGS")))
+              '(".exe" ".com" ".o" ".out" "./" "../" ".docx" ".xlsx" "#" ".DS_Store" ".zip" ".tar.gz" ".tgz" "Icon\n" "TAGS" "__pycache__/")))
 (defadvice completion-file-name-table (after ignoring-backups-f-n-completion activate)
   "filter out results when the have completion-ignored-extensions"
   (let ((res ad-return-value))
