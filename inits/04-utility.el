@@ -38,3 +38,5 @@
     (with-parsed-tramp-file-name filename nil
       (let ((backup-directory-alist backup-directory-alist))
         (tramp-run-real-handler 'find-backup-file-name (list filename))))))
+
+(add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
