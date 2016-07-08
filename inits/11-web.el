@@ -1,3 +1,6 @@
+(el-get-bundle company-php in xcwen/ac-php
+  :name company-php
+  :depends (s f xcscope yasnippet php-mode popup))
 (el-get-bundle php-mode)
 (el-get-bundle! flymake-cursor)
 (el-get-bundle arnested/php-extras)
