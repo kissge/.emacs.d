@@ -1,12 +1,10 @@
 (el-get-bundle tarao/with-eval-after-load-feature-el)
 
-(el-get-bundle! flymake ; don't load this after auto-complete
+(el-get-bundle! flymake
   (add-hook 'flymake-mode-hook
             (lambda ()
               (local-set-key (kbd "M-p") 'flymake-goto-prev-error)
               (local-set-key (kbd "M-n") 'flymake-goto-next-error))))
-(el-get-bundle auto-complete
-  (custom-set-variables `(ac-comphist-file ,(expand-file-name (concat user-emacs-directory "/.achist")))))
 (el-get-bundle! session
   (custom-set-variables '(history-length 10000)
                         '(history-delete-duplicates t))

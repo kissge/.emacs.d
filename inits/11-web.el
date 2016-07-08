@@ -16,9 +16,7 @@
                    (let ((mode-and-masks (flymake-get-file-name-mode-and-masks "example.php")))
                      (setcar mode-and-masks 'flymake-phpcs-init)))
                (php-enable-symfony2-coding-style)
-               (setq show-trailing-whitespace t)
-               (make-local-variable 'ac-stop-words)
-               (add-to-list 'ac-stop-words "php"))))
+               (setq show-trailing-whitespace t))))
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
   (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))))
@@ -30,10 +28,6 @@
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
-  (with-eval-after-load-feature 'web-mode
-    (setq web-mode-ac-sources-alist
-          '(("css" . (ac-source-css-property))
-            ("html" . (ac-source-words-in-buffer ac-source-abbrev))))))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode)))
 
 (custom-set-variables '(sgml-basic-offset 4))
