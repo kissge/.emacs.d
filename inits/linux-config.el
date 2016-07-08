@@ -9,4 +9,3 @@
   :url "https://mozc.googlecode.com/svn/trunk/src/unix/emacs/mozc.el"
   (setq default-input-method "japanese-mozc")
   (global-set-key (kbd "s-SPC") 'toggle-input-method))
-(el-get-bundle! pos-tip)
