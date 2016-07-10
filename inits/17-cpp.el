@@ -10,3 +10,4 @@
 (el-get-bundle company-irony
   (with-eval-after-load-feature 'company
     (add-to-list 'company-backends 'company-irony)))
+(el-get-bundle irony-eldoc)
