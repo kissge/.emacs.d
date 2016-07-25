@@ -1,5 +1,4 @@
 (el-get-bundle company-jedi
-  (add-hook 'python-mode-hook 'jedi:setup)
   (with-eval-after-load-feature 'company
     (add-to-list 'company-backends 'company-jedi))
   (custom-set-variables '(jedi:complete-on-dot t)
