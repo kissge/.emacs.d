@@ -31,7 +31,7 @@
   (define-key company-active-map [backtab] 'company-select-previous))
 (el-get-bundle pos-tip)
 (el-get-bundle company-quickhelp
-  (company-quickhelp-mode))
+  (when window-system (company-quickhelp-mode)))
 (el-get-bundle! session
   (custom-set-variables '(history-length 10000)
                         '(history-delete-duplicates t))
