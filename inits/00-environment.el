@@ -50,3 +50,5 @@
 (custom-set-variables '(el-get-git-shallow-clone t))
 
 (setq auto-mode-alist (cons '("\\.m$" . octave-mode) auto-mode-alist))
+
+(custom-set-variables '(load-prefer-newer t))
