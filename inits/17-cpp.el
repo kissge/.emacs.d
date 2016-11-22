@@ -11,3 +11,15 @@
   (with-eval-after-load-feature 'company
     (add-to-list 'company-backends 'company-irony)))
 (el-get-bundle irony-eldoc)
+
+(el-get-bundle syohex/emacs-cpp-auto-include
+  (defun auto-cpp-auto-include ()
+    (unless (save-excursion
+              (save-match-data
+                (goto-char (point-min))
+                (search-forward "bits/stdc++.h" nil t)))
+      (if (member (this-command-keys) '(";" "<" ">" " " "\^M"))
+          (cpp-auto-include))))
+  (add-hook 'c++-mode-hook
+            (defun c++-mode-my-hook ()
+              (add-hook 'post-self-insert-hook 'auto-cpp-auto-include nil t))))
