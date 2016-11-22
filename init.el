@@ -17,6 +17,5 @@
 
 (el-get-bundle kissge/init-loader
   (custom-set-variables '(init-loader-show-log-after-init 'error-only)
-                        '(init-loader-byte-compile t)
                         '(init-loader-order 'platform-specific-first))
   (init-loader-load))
