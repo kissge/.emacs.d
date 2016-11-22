@@ -173,4 +173,5 @@
   (let ((b (if mark-active (min (point) (mark)) (point-min)))
         (e (if mark-active (max (point) (mark)) (point-max))))
     (shell-command-on-region b e
-                             (concat "php -r 'var_export(json_decode(file_get_contents(\"php://stdin\"), true));'"))))
+                             (concat "php -r 'var_export(json_decode(file_get_contents(\"php://stdin\"), true));'")
+                             (current-buffer) t)))
