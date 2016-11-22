@@ -47,3 +47,16 @@
       (electric-pair-default-inhibit char)))
 (custom-set-variables '(electric-pair-inhibit-predicate #'electric-pair-my-heuristic-inhibit))
 (electric-pair-mode)
+
+;; auto-insert
+(require 'autoinsert) ;; to suppress compiler warning
+(auto-insert-mode)
+(custom-set-variables `(auto-insert-directory ,(locate-user-emacs-file "templates/")))
+(dolist (file (directory-files auto-insert-directory nil "^default\\."))
+  (add-to-list 'auto-insert-alist
+               (cons (cons (concat "\\." (file-name-extension file))
+                           (concat "*." (file-name-extension file))) file)))
+(let ((auto-insert-config-file (expand-file-name (concat auto-insert-directory "config.el"))))
+  (if (file-exists-p auto-insert-config-file)
+      (load-file auto-insert-config-file)))
+
