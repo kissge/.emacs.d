@@ -1,3 +1,28 @@
+(with-eval-after-load-feature 'cc-mode
+  (defun insert-lt-or-shift-op (arg)
+    (interactive "*P")
+    (c-electric-lt-gt arg)
+    (let ((position-cout (save-excursion
+                           (or (search-backward "cout" (point-at-bol) t)
+                               (search-backward "cerr" (point-at-bol) t)
+                               (search-backward "clog" (point-at-bol) t)))))
+      (if position-cout
+          (let ((position-paren (save-excursion (search-backward "(" (point-at-bol) t))))
+            (if (or (not position-paren) (< position-paren position-cout))
+                (insert "< "))))))
+
+  (defun insert-gt-or-shift-op (arg)
+    (interactive "*P")
+    (c-electric-lt-gt arg)
+    (let ((position-cin (save-excursion (search-backward "cin" (point-at-bol) t))))
+      (if position-cin
+          (let ((position-paren (save-excursion (search-backward "(" (point-at-bol) t))))
+            (if (or (not position-paren) (< position-paren position-cin))
+                (insert "> "))))))
+
+  (define-key c++-mode-map "<" 'insert-lt-or-shift-op)
+  (define-key c++-mode-map ">" 'insert-gt-or-shift-op))
+
 (el-get-bundle irony-mode
   (with-eval-after-load-feature 'irony
     (defun irony-mode-if-possible ()
