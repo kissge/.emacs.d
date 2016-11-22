@@ -101,3 +101,6 @@
 
 (el-get-bundle! mode-icons
   (mode-icons-mode))
+
+(el-get-bundle beacon
+  (beacon-mode))
