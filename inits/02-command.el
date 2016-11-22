@@ -175,3 +175,5 @@
     (shell-command-on-region b e
                              (concat "php -r 'var_export(json_decode(file_get_contents(\"php://stdin\"), true));'")
                              (current-buffer) t)))
+
+(global-set-key (kbd "M-SPC") (lambda () (interactive) (just-one-space -1)))
