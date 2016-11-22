@@ -20,6 +20,11 @@
                      (setcar mode-and-masks 'flymake-phpcs-init)))
                (php-enable-symfony2-coding-style)
                (setq show-trailing-whitespace t))))
+(el-get-bundle gist:05d736b37f1d726a38807061d9fb6232:php-doc
+ (custom-set-variables '(php-insert-doc-access-tag nil))
+  (add-hook 'php-mode-hook
+            (defun php-mode-php-doc-hook ()
+             (local-set-key (kbd "M-P") 'php-insert-doc-block))))
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
   (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))))
