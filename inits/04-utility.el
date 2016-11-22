@@ -40,3 +40,10 @@
         (tramp-run-real-handler 'find-backup-file-name (list filename))))))
 
 (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
+
+(defun electric-pair-my-heuristic-inhibit (char)
+  ;; insert nothing if the following char is alphabet, number, "_", "(", or "["
+  (or (looking-at-p "[[:alnum:]_(\[]")
+      (electric-pair-default-inhibit char)))
+(custom-set-variables '(electric-pair-inhibit-predicate #'electric-pair-my-heuristic-inhibit))
+(electric-pair-mode)
