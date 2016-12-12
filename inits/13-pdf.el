@@ -1,6 +1,8 @@
 (el-get-bundle pdf-tools
   (autoload 'pdf-view-mode "pdf-view")
   (setq auto-mode-alist (cons '("\\.pdf$" . pdf-view-mode) auto-mode-alist))
+  (with-eval-after-load-feature "pdf-tools"
+    (pdf-tools-install))
   (add-hook 'pdf-view-mode-hook
             (defun pdf-view-mode-my-hook ()
               (auto-revert-mode)
