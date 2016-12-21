@@ -148,6 +148,15 @@
   (autoload 'string-inflection-my-style-cycle "string-inflection")
   (global-set-key (kbd "C-x C-A") 'string-inflection-my-style-cycle))
 
+;; (el-get-bundle elpa:indent-tools) <- broken?
+(el-get-bundle indent-tools
+  :depends (s hydra yafolding) ;; hey, I don't need hydra, really!
+  :url "https://gitlab.com/emacs-stuff/indent-tools.git"
+  (indent-tools-minor-mode)
+  (global-set-key (kbd "C-c <C-left>") 'indent-tools-demote)
+  (global-set-key (kbd "C-c <C-right>") 'indent-tools-indent)
+  (global-set-key (kbd "C-c M-;") 'indent-tools-comment))
+
 (global-set-key (kbd "C-c C-d")
                 (defun insert-iso8601-date ()
                   (interactive)
