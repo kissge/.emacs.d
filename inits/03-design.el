@@ -33,7 +33,8 @@
 
 (el-get-bundle! milkypostman/powerline
   ;; bad hack :( ... see https://github.com/milkypostman/powerline/issues/54
-  (custom-set-variables '(ns-use-srgb-colorspace nil))
+  (custom-set-variables '(ns-use-srgb-colorspace nil)
+                        '(powerline-gui-use-vcs-glyph t))
 
   (defface powerline-active1-tramp '((t (:inherit mode-line))) "" :group 'powerline)
   (defface powerline-active2-tramp '((t (:inherit mode-line))) "" :group 'powerline)
@@ -81,8 +82,14 @@
                         (powerline-narrow face1 'l)
                         (powerline-raw " " face1)
                         (funcall separator-left face1 face2)
-                        (powerline-vc face2 'r)))
-             (rhs (list (powerline-raw global-mode-string face2 'r)
+                        (powerline-raw " " face2)
+                        (if file
+                            (powerline-raw
+                             (let ((dir (file-name-directory file)) (home (getenv "HOME")))
+                               (if (and (not remote) home) (replace-regexp-in-string (regexp-quote home) "~" dir)
+                                 dir)) face2 'r))
+                        ))
+             (rhs (list (powerline-vc face2 'r)
                         (funcall separator-right face2 face1)
                         (powerline-buffer-size face1 'l)
                         (powerline-raw " " face1)
