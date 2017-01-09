@@ -1,4 +1,5 @@
-(custom-set-variables '(org-startup-folded nil))
+(custom-set-variables '(org-startup-folded nil)
+                      '(org-descriptive-links nil))
 (declare-function org-insert-heading "org" (&optional arg invisible-ok))
 (defun org-my-return ()
   (interactive)
