@@ -25,6 +25,8 @@
 (el-get-bundle yaml-mode
   (setq-default yaml-indent-offset 4)
   (add-hook 'yaml-mode-hook (lambda () (setq require-final-newline t))))
+(el-get-bundle scss-mode
+  (add-hook 'scss-mode-hook (lambda () (setq require-final-newline t))))
 
 (el-get-bundle web-mode
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
