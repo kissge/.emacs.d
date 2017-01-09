@@ -112,8 +112,8 @@
 (global-set-key (kbd "M-U") 'revert-buffer)
 (global-set-key (kbd "M-N") 'normal-mode)
 
-(fset 'delete-eol-and-indent [down ?\M-m S-up S-end ? ])
-(global-set-key (kbd "<S-kp-delete>") 'delete-eol-and-indent)
+(global-set-key (kbd "<S-kp-delete>")
+                (defun my-just-one-space () (interactive) (just-one-space -1)))
 
 (defun beautify-json ()
   (interactive)
@@ -178,5 +178,3 @@
     (shell-command-on-region b e
                              (concat "php -r 'var_export(json_decode(file_get_contents(\"php://stdin\"), true));'")
                              (current-buffer) t)))
-
-(global-set-key (kbd "M-SPC") (lambda () (interactive) (just-one-space -1)))
