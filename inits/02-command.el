@@ -5,16 +5,10 @@
 (custom-set-variables '(cua-mode t nil (cua-base))
                       '(select-active-regions nil)) ; for clipboard
 
-(defun compile-in-background (command &optional comint)
-  (interactive
-   (list
-    (let ((command (eval compile-command)))
-      (if (or compilation-read-command current-prefix-arg)
-          (compilation-read-command command)
-        command))
-    (consp current-prefix-arg)))
+(defun compile-in-background ()
+  (interactive)
   (save-window-excursion
-    (compile command comint)))
+    (call-interactively 'compile)))
 (defun recompile-in-background ()
   (interactive)
   (save-window-excursion
