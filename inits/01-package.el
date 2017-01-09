@@ -34,7 +34,9 @@
   (when window-system (company-quickhelp-mode)))
 (el-get-bundle! session
   (custom-set-variables '(history-length 10000)
-                        '(history-delete-duplicates t))
+                        '(history-delete-duplicates t)
+                        '(session-globals-max-size 999999999999)
+                        '(session-globals-include nil))
   (with-eval-after-load-feature 'session
     (setq session-set-file-name-exclude-regexp
           (concat session-set-file-name-exclude-regexp "\\|" "[/\\]\\.scratch" "\\|" "[/\\]geben[/\\]" "\\|" "\\.loaddefs\\.el")))
