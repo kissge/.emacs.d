@@ -86,7 +86,7 @@
                         (if file
                             (powerline-raw
                              (let ((dir (file-name-directory file)) (home (getenv "HOME")))
-                               (if (and (not remote) home) (replace-regexp-in-string (regexp-quote home) "~" dir)
+                               (if (and (not remote) home) (replace-regexp-in-string (concat "^" (regexp-quote home)) "~" dir)
                                  dir)) face2 'r))
                         ))
              (rhs (list (powerline-vc face2 'r)
