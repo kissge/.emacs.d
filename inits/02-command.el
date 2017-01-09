@@ -178,3 +178,12 @@
     (shell-command-on-region b e
                              (concat "php -r 'var_export(json_decode(file_get_contents(\"php://stdin\"), true));'")
                              (current-buffer) t)))
+
+(global-set-key
+ (kbd "<S-return>")
+ (defun newline-and-copy-prefix ()
+   (interactive)
+   (let ((current-line (buffer-substring-no-properties (point-at-bol) (point-at-eol))))
+     (newline)
+     (if (string-match "^\\s-*\\S-+\\s-*" current-line)
+         (insert (match-string 0 current-line))))))
