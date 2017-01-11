@@ -106,8 +106,10 @@
                 (powerline-fill face2 (powerline-width rhs))
                 (powerline-render rhs)))))))
 
-(el-get-bundle ryuslash/mode-icons
-  (mode-icons-mode))
+(when window-system
+  (el-get-bundle ryuslash/mode-icons
+    (custom-set-variables '(powerline-height 25))
+    (mode-icons-mode)))
 
 (el-get-bundle beacon
   (beacon-mode))
