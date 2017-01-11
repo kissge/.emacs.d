@@ -106,7 +106,7 @@
                 (powerline-fill face2 (powerline-width rhs))
                 (powerline-render rhs)))))))
 
-(el-get-bundle mode-icons
+(el-get-bundle ryuslash/mode-icons
   (mode-icons-mode))
 
 (el-get-bundle beacon
