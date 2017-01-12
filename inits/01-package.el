@@ -58,9 +58,8 @@
   (global-set-key (kbd "C-_") 'undo-tree-undo)
   (custom-set-variables `(undo-tree-history-directory-alist `(("." . ,(locate-user-emacs-file ".undo"))))
                         '(undo-tree-auto-save-history t)))
-(el-get-bundle ws-trim
-  (global-ws-trim-mode t)
-  (set-default 'ws-trim-level 0))
+(el-get-bundle ws-butler
+  (ws-butler-global-mode))
 (el-get-bundle zlc
   (zlc-mode t)
   (define-key minibuffer-local-map (kbd "/") nil))
