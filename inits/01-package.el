@@ -70,10 +70,6 @@
 (let ((bluebird (expand-file-name "~/Dropbox/Settings/bluebird.el")))
   (if (and (not env-hikarie) (file-exists-p bluebird))
       (el-get-bundle hayamiz/twittering-mode
-        (global-unset-key "\C-t")
-        (global-set-key "\C-t\C-h" 'twit)
-        (global-set-key "\C-t\C-t" 'twittering-update-status-interactive)
-        (global-set-key "\C-t\C-r" 'twittering-replies-timeline)
         (custom-set-variables
          '(twittering-status-format "%i @%s / %S %p: \n %T\n [%@]%r %R %f%L\n")
          '(twittering-retweet-format " RT @%s: %t")
