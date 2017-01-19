@@ -109,7 +109,10 @@
     (message (concat "Copied \"" name "\" to clipboard."))))
 (global-set-key (kbd "C-x C-z") 'copy-filename)
 
-(global-set-key (kbd "M-U") 'revert-buffer)
+(global-set-key (kbd "M-U")
+                (defun my-revert-buffer ()
+                  (interactive)
+                  (revert-buffer nil (not (buffer-modified-p)))))
 (global-set-key (kbd "M-N") 'normal-mode)
 
 (global-set-key (kbd "<S-kp-delete>")
