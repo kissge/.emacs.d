@@ -28,7 +28,13 @@
           (company-complete-selection)
         (company--insert-candidate2 company-common))))
   (define-key company-active-map [tab] 'company-complete-common2)
-  (define-key company-active-map [backtab] 'company-select-previous))
+  (define-key company-active-map [backtab] 'company-select-previous)
+  (push (apply-partially
+         #'cl-remove-if
+         (lambda (c)
+           (or (string-match-p "[^\x00-\x7F]+" c)
+               (string-match-p "^[0-9]\\{,4\\}$" c))))
+        company-transformers))
 (el-get-bundle pos-tip)
 (el-get-bundle company-quickhelp
   (when window-system (company-quickhelp-mode)))
