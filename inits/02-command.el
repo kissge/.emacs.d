@@ -188,5 +188,5 @@
    (interactive)
    (let ((current-line (buffer-substring-no-properties (point-at-bol) (point-at-eol))))
      (newline)
-     (if (string-match "^\\s-*\\S-+\\s-*" current-line)
-         (insert (match-string 0 current-line))))))
+     (if (string-match "^\\(\\s-*\\S-+\\)\\s-*" current-line)
+         (insert (match-string (if (eq ?  (char-syntax (char-after))) 1 0) current-line))))))
