@@ -89,7 +89,9 @@
                                (if (and (not remote) home) (replace-regexp-in-string (concat "^" (regexp-quote home)) "~" dir)
                                  dir)) face2 'r))
                         ))
-             (rhs (list (powerline-vc face2 'r)
+             (rhs (list (powerline-raw (if git-gutter+-diffinfos
+                                           (let ((len (length git-gutter+-diffinfos)))
+                                             (format "%d hunk%s " len (if (> len 1) "s" ""))) "") face2)
                         (funcall separator-right face2 face1)
                         (powerline-buffer-size face1 'l)
                         (powerline-raw " " face1)
