@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: show
+# key: show
+# --
+#define show(expr) std::cout << #expr << " = " << (expr) << std::endl
