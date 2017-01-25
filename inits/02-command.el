@@ -190,3 +190,11 @@
      (newline)
      (if (string-match "^\\(\\s-*\\S-+\\)\\s-*" current-line)
          (insert (match-string (if (eq ?  (char-syntax (char-after))) 1 0) current-line))))))
+
+(define-key minibuffer-local-map (kbd "<S-kp-delete>")
+  (defun delete-minibuffer-history ()
+    (interactive)
+    (set minibuffer-history-variable
+         (delete (buffer-substring-no-properties (minibuffer-prompt-end) (point-max))
+                 (symbol-value minibuffer-history-variable)))
+    (goto-history-element minibuffer-history-position)))
