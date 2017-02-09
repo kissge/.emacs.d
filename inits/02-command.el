@@ -115,8 +115,9 @@
                   (revert-buffer nil (not (buffer-modified-p)))))
 (global-set-key (kbd "M-N") 'normal-mode)
 
-(global-set-key (kbd "<S-kp-delete>")
-                (defun my-just-one-space () (interactive) (just-one-space -1)))
+(global-set-keys
+ (defun my-just-one-space () (interactive) (just-one-space -1))
+ (kbd "<S-kp-delete>") (kbd "<S-delete>"))
 
 (defun beautify-json ()
   (interactive)
@@ -198,3 +199,4 @@
          (delete (buffer-substring-no-properties (minibuffer-prompt-end) (point-max))
                  (symbol-value minibuffer-history-variable)))
     (goto-history-element minibuffer-history-position)))
+(define-key minibuffer-local-map (kbd "<S-delete>") 'delete-minibuffer-history)
