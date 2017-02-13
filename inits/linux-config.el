@@ -6,6 +6,6 @@
 
 (el-get-bundle! mozc
   :type http
-  :url "https://mozc.googlecode.com/svn/trunk/src/unix/emacs/mozc.el"
+  :url "https://raw.githubusercontent.com/google/mozc/master/src/unix/emacs/mozc.el"
   (setq default-input-method "japanese-mozc")
   (global-set-key (kbd "s-SPC") 'toggle-input-method))
