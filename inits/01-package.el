@@ -60,6 +60,7 @@
                         (kbd "<M-left>") (kbd "<M-right>")
                         (kbd "<M-S-left>") (kbd "<M-S-right>")))
                 (local-unset-key key)))))
+(el-get-bundle powershell)
 (el-get-bundle! yasnippet
   (yas-global-mode 1)
   (define-key yas-minor-mode-map [backtab] 'yas-expand)
