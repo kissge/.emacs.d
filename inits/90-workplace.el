@@ -4,6 +4,7 @@
 
 (when env-ms
   (prefer-coding-system 'utf-8-dos)
+  (custom-set-variables '(nxml-child-indent 4))
   (global-set-key
    (kbd "C-x ,")
    (defun git-add-force-this-file ()
