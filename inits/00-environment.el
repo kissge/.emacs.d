@@ -1,4 +1,5 @@
 (defconst env-hikarie (string-match-p "^vmac" system-name))
+(defconst env-ms (file-directory-p "C:/sd"))
 
 (setq make-backup-files t)
 (setq backup-directory-alist
@@ -49,6 +50,7 @@
 
 (custom-set-variables '(el-get-git-shallow-clone t))
 
-(setq auto-mode-alist (cons '("\\.m$" . octave-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.xaml$" . xml-mode)
+                            (cons '("\\.m$" . octave-mode) auto-mode-alist)))
 
 (custom-set-variables '(load-prefer-newer t))
