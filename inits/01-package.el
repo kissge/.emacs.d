@@ -38,6 +38,8 @@
 (el-get-bundle pos-tip)
 (el-get-bundle company-quickhelp
   (when window-system (company-quickhelp-mode)))
+(el-get-bundle nschum/guess-style
+  (add-hook 'nxml-mode-hook 'guess-style-guess-all))
 (el-get-bundle! session
   (custom-set-variables '(history-length 10000)
                         '(history-delete-duplicates t)
