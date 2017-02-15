@@ -7,6 +7,8 @@
               (local-set-key (kbd "M-n") 'flymake-goto-next-error))))
 (el-get-bundle auto-complete
   (custom-set-variables `(ac-comphist-file ,(expand-file-name (concat user-emacs-directory "/.achist")))))
+(el-get-bundle nschum/guess-style
+  (add-hook 'nxml-mode-hook 'guess-style-guess-all))
 (el-get-bundle! session
   (custom-set-variables '(history-length 10000)
                         '(history-delete-duplicates t)
