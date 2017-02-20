@@ -52,9 +52,8 @@
 
 (setq auto-mode-alist
       (append '(("\\.xaml$" . xml-mode)
-                ("\\.uix$" . xml-mode)
-                ("\\.dm$" . xml-mode)
-                ("\\.m$" . octave-mode))
+                ("\\.m$" . octave-mode)
+                )
               auto-mode-alist))
 
 (custom-set-variables '(load-prefer-newer t))
