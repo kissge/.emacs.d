@@ -15,6 +15,10 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
+(defun global-set-keys (command &rest keys)
+  (dolist (key keys)
+    (global-set-key key command)))
+
 (el-get-bundle kissge/init-loader
   (custom-set-variables '(init-loader-show-log-after-init 'error-only)
                         '(init-loader-order 'platform-specific-first))
