@@ -1,5 +1,5 @@
 (defconst env-hikarie (string-match-p "^vmac" system-name))
-(defconst env-ms (file-directory-p "C:/sd"))
+(defconst env-ms (or (file-directory-p "C:/sd") (file-directory-p "/c/sd")))
 
 (setq make-backup-files t)
 (setq backup-directory-alist
