@@ -1,7 +1,3 @@
-(defun global-set-keys (command &rest keys)
-  (dolist (key keys)
-    (global-set-key key command)))
-
 (custom-set-variables '(cua-mode t nil (cua-base))
                       '(select-active-regions nil)) ; for clipboard
 
