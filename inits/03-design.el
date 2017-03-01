@@ -115,6 +115,11 @@
     (custom-set-variables '(powerline-height 25))
     (mode-icons-mode)))
 
+;; The window displaying the '*Completions*' buffer with minibuffer
+;; completion candidates is now shown at the bottom of the selected
+;; frame (>= 25.1)
+(temp-buffer-resize-mode)
+
 (el-get-bundle beacon
   (beacon-mode))
 
