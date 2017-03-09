@@ -196,3 +196,9 @@
                  (symbol-value minibuffer-history-variable)))
     (goto-history-element minibuffer-history-position)))
 (define-key minibuffer-local-map (kbd "<S-delete>") 'delete-minibuffer-history)
+
+(custom-set-variables '(windmove-wrap-around t))
+(global-set-key (kbd "<C-M-S-up>") 'windmove-up)
+(global-set-key (kbd "<C-M-S-down>") 'windmove-down)
+(global-set-key (kbd "<C-M-S-left>") 'windmove-left)
+(global-set-key (kbd "<C-M-S-right>") 'windmove-right)
