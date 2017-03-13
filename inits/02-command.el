@@ -171,6 +171,17 @@
       (delete-region from (point))
       (insert-char ?/))))
 
+(define-key minibuffer-local-map (kbd "C-x C-z")
+  (defun swap-slash-and-backslash ()
+    (interactive)
+    (save-excursion
+      (beginning-of-buffer)
+      (let* ((direction (save-excursion (search-forward "/" nil t)))
+             (from (if direction "/" "\\"))
+             (to (if direction "\\" "/")))
+        (while (search-forward from nil t)
+          (replace-match to nil t))))))
+
 (defun json-to-php-array ()
   (interactive)
   (let ((b (if mark-active (min (point) (mark)) (point-min)))
