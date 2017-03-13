@@ -11,3 +11,7 @@
   (global-set-keys 'toggle-input-method
                    (kbd "s-SPC") (kbd "<zenkaku-hankaku>")))
 (el-get-bundle! pos-tip)
+
+(defun open-terminal-here ()
+  (interactive)
+  (shell-command "gnome-terminal ."))

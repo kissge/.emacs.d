@@ -213,3 +213,5 @@
 (global-set-key (kbd "<C-M-S-down>") 'windmove-down)
 (global-set-key (kbd "<C-M-S-left>") 'windmove-left)
 (global-set-key (kbd "<C-M-S-right>") 'windmove-right)
+
+(global-set-key (kbd "M-\"") 'open-terminal-here)
