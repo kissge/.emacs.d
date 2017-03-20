@@ -97,13 +97,13 @@
 
 (global-unset-key (kbd "M-c"))
 (global-unset-key (kbd "C-x C-z"))
-(defun copy-filename ()
+(defun copy-file-name ()
   (interactive)
-  (let* ((name (buffer-file-name))
+  (let* ((name (or (buffer-file-name) (expand-file-name default-directory)))
          (name (or (file-remote-p name 'localname) name)))
     (kill-new name)
     (message (concat "Copied \"" name "\" to clipboard."))))
-(global-set-key (kbd "C-x C-z") 'copy-filename)
+(global-set-key (kbd "C-x C-z") 'copy-file-name)
 
 (global-set-key (kbd "M-U")
                 (defun my-revert-buffer ()
