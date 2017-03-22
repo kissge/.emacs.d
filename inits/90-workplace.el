@@ -9,11 +9,13 @@
             (defun c-mode-ms-coding-convention ()
               (c-set-offset 'innamespace 0)))
   (setq auto-mode-alist
-      (append '(("\\.uix$" . xml-mode)
-                ("\\.dm$" . xml-mode)
-                ("\\.ds$" . xml-mode)
-                )
-              auto-mode-alist))
+        (append '(("\\.uix$" . xml-mode)
+                  ("\\.dm$" . xml-mode)
+                  ("\\.ds$" . xml-mode)
+                  ("/\\([Mm]akefil0\\|sources\\)\\'" . makefile-mode)
+                  ("\\.inc\\'" . makefile-mode)
+                  )
+                auto-mode-alist))
   (global-set-key
    (kbd "C-x ,")
    (defun git-add-force-this-file ()
