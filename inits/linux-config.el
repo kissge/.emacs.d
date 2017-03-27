@@ -15,3 +15,6 @@
 (defun open-terminal-here ()
   (interactive)
   (shell-command "gnome-terminal ."))
+
+(set-fontset-font "fontset-default" 'japanese-jisx0208 '("Noto Sans CJK JP Medium" . "iso10646-1"))
+(set-fontset-font "fontset-default" 'katakana-jisx0201 '("Noto Sans CJK JP Medium" . "iso10646-1"))
