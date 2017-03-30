@@ -66,7 +66,7 @@
              (separator-right (intern (format "powerline-%s-%s"
                                               powerline-default-separator
                                               (cdr powerline-default-separator-dir))))
-             (lhs (list (powerline-raw "%*" nil 'l)
+             (lhs (list (powerline-raw mode-line-modified nil 'l)
                         (powerline-raw mode-line-mule-info nil 'l)
                         (powerline-raw (if remote "[%3l" "(%3l"))
                         (powerline-raw ",")
