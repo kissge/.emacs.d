@@ -112,7 +112,7 @@
 (global-set-key (kbd "M-N") 'normal-mode)
 
 (global-set-keys
- (defun my-just-one-space () (interactive) (just-one-space -1))
+ (defun my-cycle-spacing () (interactive) (cycle-spacing -1))
  (kbd "<S-kp-delete>") (kbd "<S-delete>"))
 
 (defun beautify-json ()
