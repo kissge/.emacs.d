@@ -7,6 +7,9 @@
   (setq-default el-get-dir (expand-file-name "el-get" versioned-dir)
                 package-user-dir (expand-file-name "elpa" versioned-dir)))
 
+(custom-set-variables
+ '(nsm-settings-file (locate-user-emacs-file ".network-security.data")))
+
 (add-to-list 'load-path (expand-file-name "el-get" el-get-dir))
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
