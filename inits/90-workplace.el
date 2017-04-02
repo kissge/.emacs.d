@@ -20,3 +20,5 @@
      (interactive)
      (shell-command (concat "git add -f \"" (buffer-file-name) "\""))))
   )
+
+(el-get-bundle scala-mode)

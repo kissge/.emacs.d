@@ -27,7 +27,10 @@
              (local-set-key (kbd "M-P") 'php-insert-doc-block))))
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-  (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))))
+  (custom-set-variables
+   '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))
+   '(js2-strict-trailing-comma-warning nil)))
+;; todo: check json
 (el-get-bundle yaml-mode
   (setq-default yaml-indent-offset 4)
   (add-hook 'yaml-mode-hook (lambda () (setq require-final-newline t))))
@@ -39,5 +42,7 @@
   (add-to-list 'auto-mode-alist '("\\.html.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode)))
+
+(el-get-bundle typescript-mode)
 
 (custom-set-variables '(sgml-basic-offset 4))

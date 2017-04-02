@@ -10,3 +10,6 @@
                             '(jedi:environment-virtualenv
                               (append python-environment-virtualenv
                                       `("--python" ,(executable-find "python3")))))))
+;; (el-get-bundle elpy
+;;   (custom-set-variables '(elpy-rpc-python-command "python3"))
+;;   (elpy-enable))

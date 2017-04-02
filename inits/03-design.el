@@ -73,6 +73,9 @@
                         (when (and (boundp 'which-func-mode) which-func-mode)
                           (powerline-raw which-func-format nil 'l))
                         (powerline-raw " ")
+                        ;; (when (eq major-mode 'latex-mode)
+                        ;;   (poweline-raw (shell-command-on-region (point-min) (point-max) "texcount - -brief"))
+                        ;;   (powerline-raw "-"))
                         (funcall separator-left mode-line face1)
                         (when (boundp 'erc-modified-channels-object)
                           (powerline-raw erc-modified-channels-object face1 'l))
@@ -122,6 +125,11 @@
                     ("\\` (\\*)\\'" ":sparkles:" emoji)
                     ("\\` wb\\'" ":scissors:" emoji)
                     )))
+
+    ;; (advice-add 'imagemagick-types :filter-return
+    ;;             (defun imagemagick-types-nadvice (r)
+    ;;               (append r (mapcar (lambda (x) (intern (downcase)))))))
+
     (mode-icons-mode)))
 
 ;; The window displaying the '*Completions*' buffer with minibuffer

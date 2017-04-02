@@ -53,6 +53,7 @@
 (setq auto-mode-alist
       (append '(("\\.xaml$" . xml-mode)
                 ("\\.m$" . octave-mode)
+                ("\\.zsh$" . sh-mode)
                 )
               auto-mode-alist))
 
