@@ -2,6 +2,7 @@
 (menu-bar-mode 0)
 
 (add-to-list 'exec-path "C:/cygwin64/bin")
+(custom-set-variables '(tramp-default-method "sshx"))
 
 ;; workaround for Windows-style path separator specific problem
 ;; hint: locate-user-emacs-file, replace-match
