@@ -3,6 +3,7 @@
 )
 
 (when env-ms
+  (custom-set-faces '(default ((t (:height 85)))))
   (prefer-coding-system 'utf-8-dos)
   (custom-set-variables '(nxml-child-indent 4))
   (add-hook 'c-mode-common-hook
