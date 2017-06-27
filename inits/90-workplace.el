@@ -5,7 +5,9 @@
 (when env-ms
   (custom-set-faces '(default ((t (:height 85)))))
   (prefer-coding-system 'utf-8-dos)
-  (custom-set-variables '(nxml-child-indent 4))
+  (custom-set-variables '(nxml-child-indent 4)
+                        '(require-final-newline nil)
+                        '(mode-require-final-newline nil))
   (add-hook 'c-mode-common-hook
             (defun c-mode-ms-coding-convention ()
               (c-set-offset 'innamespace 0)))
