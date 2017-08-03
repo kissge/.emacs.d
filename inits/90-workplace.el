@@ -3,6 +3,8 @@
 )
 
 (when env-ms
+  (el-get-bundle msbuild-mode in kissge/emacs-msbuild-mode)
+
   (custom-set-faces '(default ((t (:height 85)))))
   (prefer-coding-system 'utf-8-dos)
   (custom-set-variables '(nxml-child-indent 4)
