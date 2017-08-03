@@ -38,6 +38,8 @@
   (custom-set-variables '(ns-use-srgb-colorspace nil)
                         '(powerline-gui-use-vcs-glyph t))
 
+  (setq-default buffer-theme-color-seed nil)
+
   (defface powerline-active1-tramp '((t (:inherit mode-line))) "" :group 'powerline)
   (defface powerline-active2-tramp '((t (:inherit mode-line))) "" :group 'powerline)
   (set-face-attribute 'mode-line nil
@@ -58,8 +60,9 @@
              (file (or buffer-file-name dired-directory list-buffers-directory))
              (remote (and file (file-remote-p file)))
              (mode-line (if active 'mode-line 'mode-line-inactive))
-             (face1 (if active (if remote 'powerline-active1-tramp 'powerline-active1) 'powerline-inactive1))
-             (face2 (if active (if remote 'powerline-active2-tramp 'powerline-active2) 'powerline-inactive2))
+             (seed (or buffer-theme-color-seed remote))
+             (face1 (if active (if seed 'powerline-active1-tramp 'powerline-active1) 'powerline-inactive1))
+             (face2 (if active (if seed 'powerline-active2-tramp 'powerline-active2) 'powerline-inactive2))
              (separator-left (intern (format "powerline-%s-%s"
                                              powerline-default-separator
                                              (car powerline-default-separator-dir))))
@@ -101,8 +104,8 @@
                         (powerline-raw " ")
                         (powerline-raw "%6p" nil 'r)
                         )))
-        (if (and active remote)
-            (let ((hue (/ (string-to-number (substring (md5 remote) -4) 16) 65536.0)))
+        (if (and active seed)
+            (let ((hue (/ (string-to-number (substring (md5 seed) -4) 16) 65536.0)))
               (set-face-background 'powerline-active1-tramp (apply 'color-rgb-to-hex (color-hsl-to-rgb hue .7 .2)))
               (set-face-background 'powerline-active2-tramp (apply 'color-rgb-to-hex (color-hsl-to-rgb hue .7 .4)))
               (powerline-reset)))
