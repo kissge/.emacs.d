@@ -29,7 +29,7 @@
 
   (add-hook 'find-file-hook
           (defun set-buffer-theme-color-seed-to-repository-path ()
-            (if (and (buffer-file-name) (string-match "\\(.*/src\\)/" (buffer-file-name)))
+            (if (and (buffer-file-name) (string-match "\\(.*?/src\\)/" (buffer-file-name)))
                 (let ((sdxroot (match-string-no-properties 1 (buffer-file-name))))
                   (if (file-directory-p (concat sdxroot ".out"))
                       (setq-local buffer-theme-color-seed sdxroot))))))
