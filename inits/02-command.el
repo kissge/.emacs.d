@@ -215,3 +215,13 @@
 (global-set-key (kbd "<C-M-S-right>") 'windmove-right)
 
 (global-set-key (kbd "M-\"") 'open-terminal-here)
+
+(setq-default buffer-root-directory nil)
+(global-unset-key (kbd "C-x C-r"))
+(global-set-key (kbd "C-x C-r")
+                (defun find-file-from-root ()
+                  (interactive)
+                  (if buffer-root-directory
+                      (let ((default-directory buffer-root-directory))
+                        (call-interactively 'find-file))
+                    (call-interactively 'find-file-read-only))))
