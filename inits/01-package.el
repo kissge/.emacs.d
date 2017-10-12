@@ -41,6 +41,8 @@
   (zlc-mode t)
   (define-key minibuffer-local-map (kbd "/") nil))
 (el-get-bundle multiple-cursors
+  (with-eval-after-load-feature multiple-cursors
+    (define-key mc/keymap (kbd "C-:") nil))
   (global-set-key (kbd "C-: C-]") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-: C-[") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-: C-}") 'mc/unmark-next-like-this)
