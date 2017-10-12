@@ -33,9 +33,14 @@
   (add-to-list 'auto-mode-alist '("\\.html.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.vue$" . web-mode))
   (with-eval-after-load-feature 'web-mode
     (setq web-mode-ac-sources-alist
           '(("css" . (ac-source-css-property))
             ("html" . (ac-source-words-in-buffer ac-source-abbrev))))))
 
 (custom-set-variables '(sgml-basic-offset 4))
+
+(el-get-bundle! custom-google-coding-style
+  :type http
+  :url "https://raw.githubusercontent.com/msparks/dotfiles/master/.emacs.d/lisp/custom-google-coding-style.el")
