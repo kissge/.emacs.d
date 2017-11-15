@@ -22,8 +22,8 @@
 (el-get-bundle gist:05d736b37f1d726a38807061d9fb6232:php-doc
   (custom-set-variables '(php-insert-doc-access-tag nil))
   (add-hook 'php-mode-hook
-            (defun my-php-mode-hook ()
-              (define-key php-mode-map (kbd "C-c /") 'php-insert-doc-block))))
+            '(defun my-php-mode-hook ()
+               (define-key php-mode-map (kbd "C-c /") 'php-insert-doc-block))))
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
   (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))))
