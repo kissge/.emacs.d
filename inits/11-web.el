@@ -26,7 +26,8 @@
                (define-key php-mode-map (kbd "C-c /") 'php-insert-doc-block))))
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-  (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))))
+  (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))
+                        '(js2-strict-trailing-comma-warning nil)))
 (el-get-bundle yaml-mode
   (setq-default yaml-indent-offset 4)
   (add-hook 'yaml-mode-hook (lambda () (setq require-final-newline t))))
