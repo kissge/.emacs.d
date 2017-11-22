@@ -21,14 +21,10 @@
  '(show-paren-match ((t (:foreground "steelblue3")))))
 (set-face-background 'trailing-whitespace "purple4")
 (custom-set-variables '(show-trailing-whitespace t))
-(defface mixed-tab-and-space-face '((t (:background "purple4"))) nil :group 'original)
-(defface tab-face '((t (:strike-through t :foreground "#202020"))) nil :group 'original)
 (defadvice font-lock-mode (before my-font-lock-mode ())
   (font-lock-add-keywords major-mode '(("\\(// \\)?[tT][oO][dD][oO]:.*[\r\n]?" 0 'highlight append)))
   (if (or buffer-read-only (memq major-mode '(shell-mode diff-mode)))
-      (setq show-trailing-whitespace nil)
-    (font-lock-add-keywords major-mode '(("^[ \t]* \t" 0 'mixed-tab-and-space-face append)) t)
-    (font-lock-add-keywords major-mode '(("\t+" 0 'tab-face append)) t)) )
+      (setq show-trailing-whitespace nil)))
 (ad-enable-advice 'font-lock-mode 'before 'my-font-lock-mode)
 (ad-activate 'font-lock-mode)
 (add-hook 'find-file-hooks '(lambda () (if font-lock-mode nil (font-lock-mode t))))
@@ -145,3 +141,7 @@
 (el-get-bundle indent-guide
   (indent-guide-global-mode)
   (custom-set-variables '(indent-guide-char "|")))
+
+(custom-set-variables
+ '(whitespace-style '(face tabs space-after-tab::space)))
+(global-whitespace-mode 1)

@@ -28,7 +28,10 @@
 (el-get-bundle js2-mode
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
   (custom-set-variables '(js2-global-externs '("$" "location" "setInterval" "setTimeout" "clearTimeout" "clearInterval"))
-                        '(js2-strict-trailing-comma-warning nil)))
+                        '(js2-strict-trailing-comma-warning nil))
+  (add-hook 'js2-mode-hook
+            (defun js2-mode-my-hook ()
+              (setq-local whitespace-style (cons 'lines-tail whitespace-style)))))
 (el-get-bundle yaml-mode
   (setq-default yaml-indent-offset 4)
   (add-hook 'yaml-mode-hook (lambda () (setq require-final-newline t))))
