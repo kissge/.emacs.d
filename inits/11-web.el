@@ -6,7 +6,7 @@
   (custom-set-variables
    `(flymake-phpcs-command ,(and (executable-find "phpcs")
                                  (executable-find (concat el-get-dir "/flymake-phpcs/bin/flymake_phpcs"))))
-   '(flymake-phpcs-standard "Symfony2")
+   '(flymake-phpcs-standard "Symfony")
    '(flymake-phpcs-show-rule t))
   (add-hook 'php-mode-hook
             '(lambda ()
