@@ -1,4 +1,4 @@
-(when (executable-find "autoreconf")
+(when (executable-find "cask")
   (el-get-bundle pdf-tools
     (add-hook 'doc-view-mode-hook
               (defun pdf-view-mode-initialize ()
