@@ -1,6 +1,7 @@
 (setq frame-title-format (concat "%b - Emacs " emacs-version))
 
-(set-scroll-bar-mode 'right)
+(when window-system
+  (set-scroll-bar-mode 'right))
 
 (show-paren-mode 1)
 (custom-set-variables '(show-paren-style 'expression))
