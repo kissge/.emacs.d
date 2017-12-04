@@ -23,4 +23,4 @@
 
 (when env-wsl
   ;; fix for bug on WSL; tramp-mode hangs while saving
-  (custom-set-variables '(tramp-chunksize (* 1024 1024))))
+  (custom-set-variables '(tramp-chunksize 1024)))
