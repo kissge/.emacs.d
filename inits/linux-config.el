@@ -1,3 +1,5 @@
+(defconst env-wsl (and (string-match-p "Microsoft" (shell-command-to-string "uname -r")) t))
+
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 
@@ -18,3 +20,7 @@
 
 (set-fontset-font "fontset-default" 'japanese-jisx0208 '("Noto Sans CJK JP Medium" . "iso10646-1"))
 (set-fontset-font "fontset-default" 'katakana-jisx0201 '("Noto Sans CJK JP Medium" . "iso10646-1"))
+
+(when env-wsl
+  ;; fix for bug on WSL; tramp-mode hangs while saving
+  (custom-set-variables '(tramp-chunksize (* 1024 1024))))
