@@ -18,6 +18,8 @@
 * Requirements
   - Emacs 24.4
   - [[https://github.com/escapestudios/Symfony2-coding-standard][escapestudios/Symfony2-coding-standard]] (optional)
+    - cf. https://gist.github.com/kissge/6c9028e1d16901f63704ad1ff8107af0
   - poppler (optional)
   - Python (optional)
+    - virtualenv
   - emacs-mozc-bin (optional, Linux)
