@@ -35,8 +35,6 @@
 (el-get-bundle yaml-mode
   (setq-default yaml-indent-offset 4)
   (add-hook 'yaml-mode-hook (lambda () (setq require-final-newline t))))
-(el-get-bundle scss-mode
-  (add-hook 'scss-mode-hook (lambda () (setq require-final-newline t))))
 
 (el-get-bundle web-mode
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -44,6 +42,7 @@
   (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.vue$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.scss$" . web-mode))
   (with-eval-after-load-feature 'web-mode
     (setq web-mode-ac-sources-alist
           '(("css" . (ac-source-css-property))
