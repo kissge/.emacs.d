@@ -32,6 +32,17 @@
   (add-hook 'js2-mode-hook
             (defun js2-mode-my-hook ()
               (setq-local whitespace-style (cons 'lines-tail whitespace-style)))))
+(el-get-bundle cuspymd/tide
+  :branch "support-remote" ;; well, for now, for now...
+  (defun setup-tide-mode ()
+    (interactive)
+    (tide-setup)
+    (flycheck-mode +1)
+    (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    (eldoc-mode +1)
+    (tide-hl-identifier-mode +1))
+
+  (add-hook 'typescript-mode-hook #'setup-tide-mode))
 (el-get-bundle yaml-mode
   (setq-default yaml-indent-offset 4)
   (add-hook 'yaml-mode-hook (lambda () (setq require-final-newline t))))
