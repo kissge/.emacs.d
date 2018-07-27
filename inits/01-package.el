@@ -27,6 +27,8 @@
                             (ad-activate 'write-region)
                             (session-save-session)
                             (ad-deactivate 'write-region))))))
+(el-get-bundle editorconfig
+  (editorconfig-mode 1))
 (el-get-bundle dash)
 (el-get-bundle undo-tree
   (global-undo-tree-mode 1)
