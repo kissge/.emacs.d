@@ -143,6 +143,9 @@
   (indent-guide-global-mode)
   (custom-set-variables '(indent-guide-char "|")))
 
+(el-get-bundle kissge/rainbow-delimiters-not-subtle
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
 (custom-set-variables
  '(whitespace-style '(face tabs space-after-tab::space)))
 (global-whitespace-mode 1)
