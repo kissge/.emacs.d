@@ -27,6 +27,7 @@
                             (ad-activate 'write-region)
                             (session-save-session)
                             (ad-deactivate 'write-region))))))
+(el-get-bundle company-mode)
 (el-get-bundle editorconfig
   (editorconfig-mode 1))
 (el-get-bundle dash)
