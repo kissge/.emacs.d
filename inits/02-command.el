@@ -131,17 +131,6 @@
                                      "'")
                              (current-buffer) t)))
 
-(el-get-bundle akicho8/string-inflection
-  (with-eval-after-load-feature 'string-inflection
-    (defun string-inflection-my-style-cycle ()
-      (interactive)
-      (insert (let ((str (string-inflection-get-current-word)))
-                (if (string-inflection-lower-camelcase-p str)
-                    (string-inflection-underscore-function str)
-                  (string-inflection-lower-camelcase-function str))))))
-  (autoload 'string-inflection-my-style-cycle "string-inflection")
-  (global-set-key (kbd "C-x C-A") 'string-inflection-my-style-cycle))
-
 ;; (el-get-bundle elpa:indent-tools) <- broken?
 (el-get-bundle indent-tools
   :depends (s hydra yafolding) ;; hey, I don't need hydra, really!
