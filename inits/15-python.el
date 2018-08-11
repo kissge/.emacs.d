@@ -9,3 +9,5 @@
                             '(jedi:environment-virtualenv
                               (append python-environment-virtualenv
                                       `("--python" ,(executable-find "python3")))))))
+(el-get-bundle auto-virtualenvwrapper
+  (add-hook 'python-mode-hook #'auto-virtualenvwrapper-activate))
