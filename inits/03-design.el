@@ -110,21 +110,21 @@
                 (powerline-fill face2 (powerline-width rhs))
                 (powerline-render rhs)))))))
 
-(when window-system
-  (el-get-bundle emojify
-    (custom-set-variables `(emojify-emojis-dir ,(locate-user-emacs-file ".emojis"))))
-  (el-get-bundle ryuslash/mode-icons
-    (custom-set-variables '(powerline-height 25))
-    (require 'mode-icons)
-    (setq mode-icons
-          (append mode-icons
-                  '(("\\` GitGutter\\'" #xf1d2 FontAwesome)
-                    ("\\` ing\\'" ":triangular_ruler:" emoji)
-                    ("\\` VHl\\'" ":high_brightness:" emoji)
-                    ("\\` (\\*)\\'" ":sparkles:" emoji)
-                    ("\\` wb\\'" ":scissors:" emoji)
-                    )))
-    (mode-icons-mode)))
+;; (when window-system
+;;   (el-get-bundle emojify
+;;     (custom-set-variables `(emojify-emojis-dir ,(locate-user-emacs-file ".emojis"))))
+;;   (el-get-bundle ryuslash/mode-icons
+;;     (custom-set-variables '(powerline-height 25))
+;;     (require 'mode-icons)
+;;     (setq mode-icons
+;;           (append mode-icons
+;;                   '(("\\` GitGutter\\'" #xf1d2 FontAwesome)
+;;                     ("\\` ing\\'" ":triangular_ruler:" emoji)
+;;                     ("\\` VHl\\'" ":high_brightness:" emoji)
+;;                     ("\\` (\\*)\\'" ":sparkles:" emoji)
+;;                     ("\\` wb\\'" ":scissors:" emoji)
+;;                     )))
+;;     (mode-icons-mode)))
 
 ;; The window displaying the '*Completions*' buffer with minibuffer
 ;; completion candidates is now shown at the bottom of the selected
