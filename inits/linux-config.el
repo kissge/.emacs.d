@@ -28,5 +28,7 @@
          (path-separated (split-string path-trimmed path-separator)))
     (setenv "PATH" path-trimmed)
     (setq exec-path path-separated))
+  (custom-set-variables '(browse-url-generic-program "/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe")
+                        '(browse-url-browser-function 'browse-url-generic))
   ;; fix for bug on WSL; tramp-mode hangs while saving
   (custom-set-variables '(tramp-chunksize 1024)))
