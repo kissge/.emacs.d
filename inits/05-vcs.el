@@ -19,7 +19,7 @@
 (el-get-bundle git-commit
   :type http
   :url "https://raw.githubusercontent.com/magit/magit/master/lisp/git-commit.el")
-(el-get-bundle! git-gutter+ in nonsequitur/git-gutter-plus
+(el-get-bundle! git-gutter+ in sigma/git-gutter-plus
   (global-git-gutter+-mode)
   (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
   (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
