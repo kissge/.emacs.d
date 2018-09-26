@@ -31,6 +31,11 @@
 (el-get-bundle editorconfig
   (editorconfig-mode 1))
 (el-get-bundle dash)
+(el-get-bundle racer
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+  (add-hook 'racer-mode-hook #'company-mode))
+(el-get-bundle rust-mode)
 (el-get-bundle undo-tree
   (global-undo-tree-mode 1)
   (global-set-key (kbd "C-z") 'undo-tree-undo)
