@@ -10,4 +10,5 @@
                               (append python-environment-virtualenv
                                       `("--python" ,(executable-find "python3")))))))
 (el-get-bundle robert-zaremba/auto-virtualenvwrapper.el
+  :depends (virtualenvwrapper)
   (add-hook 'python-mode-hook #'auto-virtualenvwrapper-activate))
