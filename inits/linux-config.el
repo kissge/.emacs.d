@@ -30,5 +30,17 @@
     (setq exec-path path-separated))
   (custom-set-variables '(browse-url-generic-program "/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe")
                         '(browse-url-browser-function 'browse-url-generic))
+
+  (global-set-key
+   (kbd "C-x !")
+   (defun open-filer-here ()
+     (interactive)
+     (shell-command
+      (concat
+       "explorer.exe \""
+       (shell-command-to-string
+        (concat "printf %s \"$(wslpath -w \"" default-directory "\")\""))
+       "\""))))
+
   ;; fix for bug on WSL; tramp-mode hangs while saving
   (custom-set-variables '(tramp-chunksize 1024)))
