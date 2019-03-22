@@ -75,6 +75,7 @@
 (el-get-bundle powershell)
 (el-get-bundle graphviz-dot-mode)
 (el-get-bundle! yasnippet
+  (el-get-bundle yasnippet-snippets)
   (yas-global-mode 1)
   (define-key yas-minor-mode-map [backtab] 'yas-expand)
   (define-key yas-minor-mode-map [(tab)] nil)
