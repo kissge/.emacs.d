@@ -75,13 +75,13 @@
 (el-get-bundle powershell)
 (el-get-bundle graphviz-dot-mode)
 (el-get-bundle! yasnippet
-  (el-get-bundle yasnippet-snippets)
   (yas-global-mode 1)
   (define-key yas-minor-mode-map [backtab] 'yas-expand)
   (define-key yas-minor-mode-map [(tab)] nil)
   (define-key yas-minor-mode-map (kbd "TAB") nil)
   (define-key yas-minor-mode-map (kbd "<tab>") nil)
   (autoload 'string-inflection-camelcase-function "string-inflection"))
+(el-get-bundle yasnippet-snippets)
 (let ((bluebird (expand-file-name "~/Dropbox/Settings/bluebird.el")))
   (if (and (not env-hikarie) (file-exists-p bluebird))
       (el-get-bundle hayamiz/twittering-mode
